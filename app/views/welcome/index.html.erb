@@ -40,45 +40,25 @@
   </a>
 </div> <!-- Carousel -->
 
+<%= ['teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs' ].each do |button_text| %>
+  <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+  <br>
+<% end %>
+
 <button type="button" class="btn btn-lg">cell phones (computers and internet)</button>
 <br>
-<button type="button" class="btn btn-lg">clothing</button>
-<br>
-<button type="button" class="btn btn-lg">counseling</button>
-<br>
-<button type="button" class="btn btn-lg">employment</button>
-<br>
-<button type="button" class="btn btn-lg">legal services</button>
-<br>
-<button type="button" class="btn btn-lg">housing</button>
-<br>
-<button type="button" class="btn btn-lg">holiday assistance</button>
-<br>
-<button type="button" class="btn btn-lg">GED information</button>
-<br>
-<button type="button" class="btn btn-lg">youth programs / special needs</button>
-<br>
-<button type="button" class="btn btn-lg">furniture</button>
-<br>
-<button type="button" class="btn btn-lg">free clinics</button>
-<br>
-<button type="button" class="btn btn-lg">food pantries</button>
-<br>
-<br>
-<button type="button" class="btn btn-lg">material assistance</button>
+
+
 <br>
 <%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 <br>
-<button type="button" class="btn btn-lg">rent assistance</button>
+<%= button_to 'training and education', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 <br>
-<button type="button" class="btn btn-lg">teen resources</button>
+<%= button_to 'transportation services', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 <br>
-<button type="button" class="btn btn-lg">train and education</button>
+<%= button_to 'utility assistance', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 <br>
-<button type="button" class="btn btn-lg">transportation services</button>
-<br>
-<button type="button" class="btn btn-lg">utility assistance</button>
-<br>
+
 <%= button_to 'veterans', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 
 <br>
