@@ -14,7 +14,11 @@
     </div>
 
     <div class="item">
-      <%= ['after school programming', 'childcare centers', 'school supplies'].map do |button_text| %>
+      <%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+    </div>
+
+    <div class="item">
+      <% ['after school programming', 'childcare centers', 'school supplies'].map do |button_text| %>
         <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
       <% end %>
       <br>
@@ -23,7 +27,7 @@
       </div>
     </div>
 
-    <%= ['pregnancy support', 'training and education', 'transportation services', 'utility assistance', 'veterans', 'teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs','cell phones (computers and internet)'
+    <% ['training and education', 'transportation services', 'utility assistance', 'veterans', 'teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs','cell phones (computers and internet)'
      ].map do |button_text| %>
       <div class="item">
       <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
