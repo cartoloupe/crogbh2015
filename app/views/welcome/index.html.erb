@@ -26,11 +26,19 @@
       </div>
     </div>
 
+    <%= ['teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs','cell phones (computers and internet)'
+     ].each do |button_text| %>
+      <div class="item">
+      <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <br>
+      </div>
+    <% end %>
+
     <div class="item">
     <button type="button">budgeting help</button>
     </div>
   </div>
- 
+
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -40,13 +48,7 @@
   </a>
 </div> <!-- Carousel -->
 
-<%= ['teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs' ].each do |button_text| %>
-  <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-  <br>
-<% end %>
 
-<button type="button" class="btn btn-lg">cell phones (computers and internet)</button>
-<br>
 
 
 <br>
@@ -58,12 +60,5 @@
 <br>
 <%= button_to 'utility assistance', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 <br>
-
 <%= button_to 'veterans', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<%= button_to 'next', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default', id: 'next_page'} %>
