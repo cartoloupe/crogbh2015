@@ -6,33 +6,31 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <button type="button" class="btn btn-lg">english as 2nd languange</button>
-      <div class="carousel-caption">
-          <h3>Caption Text</h3>
-      </div>
+      <%= button_to 'english as a 2nd language', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
     </div>
 
     <div class="item">
-      <button type="button" class="btn btn-lg">addiction and recovery</button>
+      <%= button_to 'addiction and recovery', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
     </div>
 
     <div class="item">
-    <button type="button" class="btn btn-lg">after school programming</button>
-    <button type="button" class="btn btn-lg">childcare centers</button>
-    <button type="button" class="btn btn-lg">school supplies </button>
-<br>
+      <%= ['after school programming', 'childcare centers', 'school supplies'].map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
       <div class="carousel-caption">
           <h3>Kids</h3>
       </div>
     </div>
 
-    <%= ['teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs','cell phones (computers and internet)'
-     ].each do |button_text| %>
+    <%= ['pregnancy support', 'training and education', 'transportation services', 'utility assistance', 'veterans', 'teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs','cell phones (computers and internet)'
+     ].map do |button_text| %>
       <div class="item">
       <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
       <br>
       </div>
     <% end %>
+
 
     <div class="item">
     <button type="button">budgeting help</button>
@@ -48,17 +46,4 @@
   </a>
 </div> <!-- Carousel -->
 
-
-
-
-<br>
-<%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-<br>
-<%= button_to 'training and education', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-<br>
-<%= button_to 'transportation services', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-<br>
-<%= button_to 'utility assistance', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-<br>
-<%= button_to 'veterans', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 
