@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pregnancy/index'
+
   get 'veterans/index'
 
   get 'freeclinics/index'
