@@ -1,5 +1,12 @@
 class WelcomeController < ApplicationController
   def index
+    @other_section = [
+      'veterans',
+      'employment',
+      'holiday assistance',
+      'teen resources',
+    ]
+
     @health_section = [
       'free clinics',
       'addiction and recovery',
@@ -30,13 +37,6 @@ class WelcomeController < ApplicationController
       'furniture',
       'clothing',
       'food pantries',
-    ]
-
-    @other_section = [
-      'veterans',
-      'employment',
-      'holiday assistance',
-      'teen resources',
     ]
 
     @services_section = [
