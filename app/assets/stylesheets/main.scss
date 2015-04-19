@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  background-color: #383;
+  background-color: #4eaddd;
 }
 
 .carousel-inner {
@@ -16,8 +16,10 @@ body {
 }
 
 .demo {
-  //position: relative;
-  //margin-top: 90%;
+  position: absolute;
+  //margin-top: 5%;
+  bottom: 5%;
+
 }
 
 .item .carousel-caption {
@@ -42,6 +44,6 @@ body {
   margin-bottom: 10%;
 }
 
-.bottom, .middle, .top {
+.middle, .top {
   position: relative;
 }

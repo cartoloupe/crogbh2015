@@ -1,6 +1,7 @@
 <div class="whole">
 <div class="top">
 <h1>OneSource</h1>
+<%= image_tag('OneSource.png') %>
 
 <p>Mission: Build an online resource which succinctly organizes the wide variety of resources which are available to the homeless and low income families but are marked by difficulty to reach.</p>
 </div>
@@ -75,6 +76,16 @@
       <br>
       <div class="carousel-caption">
           <h3>Other</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <% @services_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
+      <div class="carousel-caption">
+          <h3>Services</h3>
       </div>
     </div>
 

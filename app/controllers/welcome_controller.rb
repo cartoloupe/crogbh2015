@@ -17,25 +17,27 @@ class WelcomeController < ApplicationController
       'GED information',
     ]
     @health_section = [
-        'free clinics',
-        'addiction and recovery',
-        'counseling',
+      'free clinics',
+      'addiction and recovery',
+      'counseling',
     ]
     @food_and_goods_section = [
-        'material assistance',
-        'furniture',
-        'clothing',
-        'food pantries',
+      'material assistance',
+      'furniture',
+      'clothing',
+      'food pantries',
     ]
 
     @other_section = [
-        'english as a 2nd language',
-        'transportation services',
-        'employment',
-        'legal services',
-        'budgeting help',
-        'holiday assistance',
-        'cell phones (computers and internet)',
+      'english as a 2nd language',
+      'employment',
+      'holiday assistance',
+    ]
+    @services_section = [
+      'transportation services',
+      'legal services',
+      'budgeting help',
+      'cell phones (computers and internet)',
     ]
 
   end
