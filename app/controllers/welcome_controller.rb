@@ -6,7 +6,6 @@ class WelcomeController < ApplicationController
     ]
 
     @health_section = [
-      'free clinics',
       'addiction and recovery',
       'counseling',
     ]

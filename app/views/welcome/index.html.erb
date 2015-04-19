@@ -26,6 +26,7 @@
 
     <div class="item">
       <%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <%= button_to 'free clinics', {controller: 'freeclinics', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
       <% @health_section.map do |button_text| %>
         <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
       <% end %>
