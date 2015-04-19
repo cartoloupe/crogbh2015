@@ -4,9 +4,40 @@ body {
 }
 
 .carousel-inner {
-  height: 50%;
+  //height: 50%;
 }
 
-.carousel-inner .item {
-  margin: 15%;
+.carousel-inner form {
+  margin-left: 15%;
+}
+
+.demo {
+  //position: relative;
+  //margin-top: 90%;
+}
+
+.item .carousel-caption {
+  position: relative;
+  bottom: -15%;
+}
+
+.whole {
+  height: 100%;
+}
+.top {
+  height: 25%;
+}
+.middle {
+  height: 65%;
+}
+.bottom {
+  height: 10% !important;
+}
+
+.bottom form {
+  margin-bottom: 10%;
+}
+
+.bottom, .middle, .top {
+  position: relative;
 }
