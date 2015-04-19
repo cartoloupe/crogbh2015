@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pitch/index'
+
   get 'pregnancy/index'
 
   get 'veterans/index'
