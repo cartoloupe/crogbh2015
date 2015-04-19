@@ -1,26 +1,30 @@
 class WelcomeController < ApplicationController
   def index
-    @kids_section = [
-      'after school programming',
-      'childcare centers',
-      'school supplies',
-      'youth programs / special needs',
-      'teen resources',
-    ]
-    @housing_section = [
-      'housing',
-      'rent assistance',
-      'utility assistance',
-    ]
-    @education_section = [
-      'training and education',
-      'GED information',
-    ]
     @health_section = [
       'free clinics',
       'addiction and recovery',
       'counseling',
     ]
+
+    @kids_section = [
+      'after school programming',
+      'childcare centers',
+      'school supplies',
+      'youth programs / special needs',
+    ]
+
+    @housing_section = [
+      'housing',
+      'rent assistance',
+      'utility assistance',
+    ]
+
+    @education_section = [
+      'training and education',
+      'GED information',
+      'english as a 2nd language',
+    ]
+
     @food_and_goods_section = [
       'material assistance',
       'furniture',
@@ -29,10 +33,12 @@ class WelcomeController < ApplicationController
     ]
 
     @other_section = [
-      'english as a 2nd language',
+      'veterans',
       'employment',
       'holiday assistance',
+      'teen resources',
     ]
+
     @services_section = [
       'transportation services',
       'legal services',

@@ -15,12 +15,25 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= button_to 'veterans', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% @other_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
     </div>
+
 
     <div class="item">
       <%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% @health_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
+      <div class="carousel-caption">
+          <h3>Health</h3>
+      </div>
     </div>
+
+
 
     <div class="item">
       <% @kids_section.map do |button_text| %>
@@ -54,33 +67,12 @@
 
 
     <div class="item">
-      <% @health_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Health</h3>
-      </div>
-    </div>
-
-
-    <div class="item">
       <% @food_and_goods_section.map do |button_text| %>
         <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
       <% end %>
       <br>
       <div class="carousel-caption">
           <h3>Food and Goods</h3>
-      </div>
-    </div>
-
-    <div class="item">
-      <% @other_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Other</h3>
       </div>
     </div>
 
