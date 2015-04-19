@@ -12,6 +12,11 @@ class PitchController < ApplicationController
       CRO006.png
       CRO007.png
       CRO008.png
+      CRO009.png
+      CRO010.png
+      CRO011.png
+      CRO012.png
+      CRODEMO1.png
     )
   end
 end
