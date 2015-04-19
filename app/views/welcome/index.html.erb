@@ -6,11 +6,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= button_to 'english as a 2nd language', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-    </div>
-
-    <div class="item">
-      <%= button_to 'addiction and recovery', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <%= button_to 'veterans', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
     </div>
 
     <div class="item">
@@ -18,7 +14,7 @@
     </div>
 
     <div class="item">
-      <% ['after school programming', 'childcare centers', 'school supplies'].map do |button_text| %>
+      <% @kids_section.map do |button_text| %>
         <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
       <% end %>
       <br>
@@ -27,18 +23,63 @@
       </div>
     </div>
 
-    <% ['training and education', 'transportation services', 'utility assistance', 'veterans', 'teen resources', 'rent assistance', 'material assistance', 'food pantries', 'free clinics', 'furniture', 'clothing', 'counseling', 'employment', 'legal services', 'housing', 'holiday assistance', 'GED information', 'youth programs / special needs','cell phones (computers and internet)'
-     ].map do |button_text| %>
-      <div class="item">
-      <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+    <div class="item">
+      <% @housing_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
       <br>
+      <div class="carousel-caption">
+          <h3>Housing</h3>
       </div>
-    <% end %>
+    </div>
+
+    <div class="item">
+      <% @education_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
+      <div class="carousel-caption">
+          <h3>Education</h3>
+      </div>
+    </div>
 
 
     <div class="item">
-      <%= button_to 'budgeting help', {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% @health_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
+      <div class="carousel-caption">
+          <h3>Health</h3>
+      </div>
     </div>
+
+
+    <div class="item">
+      <% @food_and_goods_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
+      <div class="carousel-caption">
+          <h3>Food and Goods</h3>
+      </div>
+    </div>
+
+    <div class="item">
+      <% @other_section.map do |button_text| %>
+        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
+      <% end %>
+      <br>
+      <div class="carousel-caption">
+          <h3>Other</h3>
+      </div>
+    </div>
+
+
+
+
+
+
   </div>
 
   <!-- Controls -->
