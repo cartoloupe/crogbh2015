@@ -1,8 +1,6 @@
 class WelcomeController < ApplicationController
   def index
     @other_section = [
-      'veterans',
-      'employment',
       'holiday assistance',
       'teen resources',
     ]
