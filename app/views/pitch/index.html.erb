@@ -2,10 +2,10 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag('CRO001.png') %>
+      <%= image_tag(@images.first) %>
     </div>
 
-    <% %w(CRO002.png CRO003.png CRO004.png CRO005.png CRO006.png).map do |screenshot| %>
+    <% @images[1..-1].map do |screenshot| %>
       <div class="item">
         <%= image_tag(screenshot) %>
       </div>
