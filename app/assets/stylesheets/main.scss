@@ -1,27 +1,21 @@
-h1 {
-  color: #ffffff;
-  float: left;
-}
-p {
+p, h1 {
   color: #ffffff;
 }
 
 .logo {
   width: 60px;
-
+  float: left;
 }
 
 .titleholder {
   width: 100%;
   display: inline;
-
 }
 
 .screenshot {
   height: 88vh !important;
   margin: 0px auto;
   background: #ffffff;
-
 }
 
 body {
