@@ -2,12 +2,12 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <%= image_tag(@images.first) %>
+      <%= image_tag(@images.first, class: "screenshot") %>
     </div>
 
     <% @images[1..-2].map do |screenshot| %>
       <div class="item">
-        <%= image_tag(screenshot) %>
+        <%= image_tag(screenshot, class: "screenshot") %>
       </div>
     <% end %>
 

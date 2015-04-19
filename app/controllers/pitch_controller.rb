@@ -8,7 +8,6 @@ class PitchController < ApplicationController
       CRO002.png
       CRO003.png
       CRO004.png
-      CRO005.png
       CRO006.png
       CRO007.png
       CRO008.png
