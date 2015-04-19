@@ -15,7 +15,6 @@ class PitchController < ApplicationController
       CRO010.png
       CRO011.png
       CRO012.png
-      CRO013.png
       CRODEMO1.png
     )
     #MAP001.png
