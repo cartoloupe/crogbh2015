@@ -9,6 +9,7 @@ community resources online give back hack 2015
 - [x] slack channel
 
 ### phase II
+- [ ] accounts and user login
 - [ ] better hosting
 - [ ] lifeline preload
 
