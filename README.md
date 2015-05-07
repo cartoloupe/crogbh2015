@@ -6,6 +6,10 @@ community resources online give back hack 2015
 ### phase I
 - [ ] finish content
 - [ ] embed maps
+- [ ] add search
+- [ ] implement design
+- [ ] tags on the page
+- [ ] icons
 - [x] slack channel
 
 ### phase II
