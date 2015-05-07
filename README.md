@@ -10,6 +10,8 @@ community resources online give back hack 2015
 - [ ] implement design
 - [ ] tags on the page
 - [ ] icons
+- [ ] sort by relevance
+- [ ] convert criteria to checklist
 - [x] slack channel
 
 ### phase II
