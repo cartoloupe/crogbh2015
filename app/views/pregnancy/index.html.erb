@@ -1,113 +1,95 @@
 <h1>Pregnancy Support</h1>
-<p></p>
-
 
 
 <br>
-<b>MotherHeart Mentoring</b> – A faith-based mentorship in which a partner will be able to assist you 
+<div class="box">
+  <b>MotherHeart Mentoring</b>
+  <p>A faith-based mentorship in which a partner will be able to assist you
+  through the pregnancy, birth, and parenting of your child. They can link you to many resources,
+  including education, material needs, and adoption agency information if requested. </p>
 
-through the pregnancy, birth, and parenting of your child. They can link you to many resources, 
-
-including education, material needs, and adoption agency information if requested. Contact Diane 
-
-Bauman at 614-259-5318.
-
-
-
-<div id="map-canvas"></div>
+  <p> <%= render 'phoneno' %> Contact Diane Bauman at 614-259-5318.</p>
+</div>
 
 <br>
-<b>Caring for 2</b> – An in-home visitation program which helps you to access healthcare services, apply for 
-
-WIC and Medicaid, and offer education on child development and parenting. Open to African-American 
-
-women in zip codes 43201, 43203, 43205, 43206, 43207, 43209, 43211, 43215, and 43219. To access 
-
-this program, call 614-645-7068. http://publichealth.columbus.gov/caring-for-2.aspx
-
-<br>
-<b>The Neighborhood House</b> – Offers classes for expectant parents and parents of children up to age 24 
-
-months. Topics cover community resources, alcohol & drugs, health, mental health, insurance, safety, 
-
-fatherhood, goal setting, financial literacy, child development, and nutrition.
-
-Phone: 614-252-4941 Location: 1000 Atcheson Street, 43203  http://colsnhi.org/fhome/
+<div class="box">
+  <b>Caring for 2</b>
+  <a href="http://publichealth.columbus.gov/caring-for-2.aspx">
+    <span class="btn btn-lg glyphicon glyphicon-share-alt"></span>
+  </a>
+  <p>An in-home visitation program which helps you to access healthcare services, apply for
+  WIC and Medicaid, and offer education on child development and parenting. Open to African-American
+  women in zip codes 43201, 43203, 43205, 43206, 43207, 43209, 43211, 43215, and 43219.</p>
+  <p><%= render 'phoneno' %> 614-645-7068.</p>
+</div>
 
 <br>
-<b>Grace Fellowship Church’s Maternity Resource Center</b> – Faith-based resource center. Serves 
-
-Westerville and Columbus area. Offers maternity clothing and baby and toddler clothing, up to age 3 
-
-only. Phone: 614-890-0078 ext. 17 Location: 3475 Paris Boulevard, Westerville, Ohio 43081 Hours: 
-
-Open one Saturday per month or Thursdays by appointment at 10 am. Returning clients may walk-in. 
-
-New clients must walk-in between 8:30 am and 9:30 am and will go through a brief interview. 
-
-http://www.gracefcwesterville.org/maternity-resource-center
+<div class="box">
+  <b>The Neighborhood House</b>
+  <%= render 'linkto', link: 'http://colsnhi.org/fhome/' %>
+  <p>Offers classes for expectant parents and parents of children up to age 24
+  months. Topics cover community resources, alcohol & drugs, health, mental health, insurance, safety,
+  fatherhood, goal setting, financial literacy, child development, and nutrition.</p>
+  <p><%= render 'phoneno' %> 614-252-4941</p>
+  <p>Location: 1000 Atcheson Street, 43203</p>
+</div>
 
 <br>
-<b>Baptists for Life of Central Ohio’s Maternity Resource Center</b> – Provides maternity clothing and 
-
-children’s clo  thing up to size 6X, disposable diapers, and some baby furniture and equipment. Phone: 
-
-614-272-7038 Location: Immanuel Baptist Church, 3417 Palmetto St, 43204 Walk-in hours: Wednesday 
-
-6:30 – 8 pm; Saturday 10 am - 12:30 pm
-
-http://www.bflco.org/maternity-resource-center/
-
-<br>
-<b>Pregnancy Decisions Health Centers</b> - Campus Care Center - Offers maternity clothing, baby 
-
-clothing up to size 2T, and baby supplies.
-
-Phone: 614-444-4411
-
-Location: 6 E. 17th Ave, 43201
-
-Hours: Monday 9 am – 5 pm; Tuesday – Friday 9 am – 4 pm; Saturday 9 am – 1 pm
+<div class="box">
+  <b>Grace Fellowship Church’s Maternity Resource Center</b>
+  <%= render 'linkto', link: 'http://www.gracefcwesterville.org/maternity-resource-center' %>
+  <p>Faith-based resource center. Serves
+  Westerville and Columbus area. Offers maternity clothing and baby and toddler clothing, up to age 3
+  only.</p>
+  <p><%= render 'phoneno' %> 614-890-0078 ext. 17</p>
+  <p>Location: 3475 Paris Boulevard, Westerville, Ohio 43081</p>
+  <p>Hours: Open one Saturday per month or Thursdays by appointment at 10 am.</p>
+  <p>Returning clients may walk-in. New clients must walk-in between 8:30 am and 9:30 am and will go through a brief interview.</p>
+</div>
 
 <br>
-<b>Pregnancy Decision Health Centers</b> - Linden Care Center - Offers maternity clothing, baby clothing 
-
-up to size 2T, and baby supplies.
-
-Phone: 614-444-4411
-
-Location: 2052 Cleveland Ave., 43211
-
-Hours: Monday 9 am – 5 pm
-
-<br>
-<b>Pregnancy Decision Health Centers</b> - West Care Center - Offers maternity clothing, baby clothing up 
-
-to size 2T, and baby supplies.
-
-Phone: 614-444-4411
-
-Location: 4111 W. Broad St., 43228
-
-Hours: Monday – Tuesday 10 am – 5 pm; Wednesday 10 am – 8 pm; Thursday 11 pm – 7 pm; Friday 10 
-
-am – 5 pm; Saturday 9 am – 1 pm
+<div class="box">
+  <b>Baptists for Life of Central Ohio’s Maternity Resource Center</b>
+  <%= render 'linkto', link: 'http://www.bflco.org/maternity-resource-center/' %>
+  <p>Provides maternity clothing and children’s clothing up to size 6X, disposable diapers, and some baby furniture and equipment.</p>
+  <p><%= render 'phoneno' %> 614-272-7038</p>
+  <p>Location: Immanuel Baptist Church, 3417 Palmetto St, 43204</p>
+  <p>Walk-in hours: Wednesday 6:30 – 8 pm; Saturday 10 am - 12:30 pm</p>
+</div>
 
 <br>
-<b>Pregnancy Decision Health Centers</b> - North Care Center – Offers maternity clothing, baby clothing 
+<div class="box">
+  <b>Pregnancy Decisions Health Centers</b>
+  <p>Campus Care Center - Offers maternity clothing, baby clothing up to size 2T, and baby supplies.</p>
+  <p><%= render 'phoneno' %> 614-444-4411</p>
+  <p>Location: 6 E. 17th Ave, 43201</p>
+  <p>Hours: Monday 9 am – 5 pm; Tuesday – Friday 9 am – 4 pm; Saturday 9 am – 1 pm</p>
+</div>
 
-up to size 2T, and baby supplies.
+<br>
+<div class="box">
+  <b>Pregnancy Decision Health Centers</b>
+  <p>Linden Care Center - Offers maternity clothing, baby clothing up to size 2T, and baby supplies.</p>
+  <p><%= render 'phoneno' %> 614-444-4411</p>
+  <p>Location: 2052 Cleveland Ave., 43211</p>
+  <p>Hours: Monday 9 am – 5 pm</p>
+</div>
 
-Phone: 614-444-4411
+<br>
+<div class="box">
+  <b>Pregnancy Decision Health Centers</b>
+  <p>West Care Center - Offers maternity clothing, baby clothing up to size 2T, and baby supplies.</p>
+  <p><%= render 'phoneno' %> 614-444-4411</p>
+  <p>Location: 4111 W. Broad St., 43228</p>
+  <p>Hours: Monday – Tuesday 10 am – 5 pm; Wednesday 10 am – 8 pm; Thursday 11 pm – 7 pm; Friday 10 am – 5 pm; Saturday 9 am – 1 pm</p>
+</div>
 
-Location: 5900 Cleveland Ave., 43231
-
-Hours: Monday – Wednesday 9 am – 8 pm; Thursday – Friday 9 am – 5 pm; Saturday 9 am – 1 pm
-
-<iframe
-  width="450"
-  height="250"
-  frameborder="0" style="border:0"
-  src="http://maps.google.com/maps/ms?ie=UTF&msa=0&msid=212237002186931109178.0004e074a457ac7aeb215">
-</iframe>
+<br>
+<div class="box">
+  <b>Pregnancy Decision Health Centers</b>
+  <p>North Care Center – Offers maternity clothing, baby clothing up to size 2T, and baby supplies.</p>
+  <p><%= render 'phoneno' %> 614-444-4411</p>
+  <p>Location: 5900 Cleveland Ave., 43231</p>
+  <p>Hours: Monday – Wednesday 9 am – 8 pm; Thursday – Friday 9 am – 5 pm; Saturday 9 am – 1 pm</p>
+</div>
 

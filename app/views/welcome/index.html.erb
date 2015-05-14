@@ -1,111 +1,11 @@
 <div class="whole">
-<div class="top">
-
-<div class="titleholder">
-<%= image_tag('OneSource.png', class: "logo") %>
-<h1>OneSource</h1>
-</div>
-
-<br>
-<br>
-<p>Mission: Build an online resource which succinctly organizes the wide variety of resources which are available to the homeless and low income families but are marked by difficulty to reach.</p>
-</div>
-
-<div id="carousel-example-generic" class="carousel slide middle custom" data-ride="carousel" data-interval="false">
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <%= button_to 'veterans', {controller: 'employment', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <%= button_to 'employment', {controller: 'employment', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% @other_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
+  <div class="top">
+    <div class="titleholder">
+    <%= image_tag('OneSource.png', class: "logo") %>
+    <h1>OneSource</h1>
     </div>
-
-
-    <div class="item">
-      <%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <%= button_to 'free clinics', {controller: 'freeclinics', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% @health_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Health</h3>
-      </div>
-    </div>
-
-
-
-    <div class="item">
-      <% @kids_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Kids</h3>
-      </div>
-    </div>
-
-    <div class="item">
-      <% @housing_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Housing</h3>
-      </div>
-    </div>
-
-    <div class="item">
-      <% @education_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Education</h3>
-      </div>
-    </div>
-
-
-    <div class="item">
-      <% @food_and_goods_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Food and Goods</h3>
-      </div>
-    </div>
-
-    <div class="item">
-      <% @services_section.map do |button_text| %>
-        <%= button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
-      <% end %>
-      <br>
-      <div class="carousel-caption">
-          <h3>Services</h3>
-      </div>
-    </div>
-
-
-
-
-
-
   </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control custom" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control custom" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div> <!-- Carousel -->
+  <%= button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'} %>
 
-<div class="bottom">
-<%= button_to 'demo', {controller: 'pitch', method: :get}, {method: :get, class: 'btn-default btn-lg btn demo'} %>
-</div>
 </div>
