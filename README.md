@@ -28,5 +28,6 @@ community resources online give back hack 2015
 - [ ] reviews
 
 
-## links
+## links to relevant organizations
 - [besa](http://www.givebesa.org/)
+- [starhouse](http://www.osustarhouse.com/About/Mission-and-Vision.aspx)
