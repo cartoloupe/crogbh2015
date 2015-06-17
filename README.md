@@ -12,7 +12,7 @@ community resources online give back hack 2015
 - [ ] icons
 - [ ] sort by relevance
 - [ ] convert criteria to checklist
-- [x] slack channel
+- [x] [slack channel](https://onesourcecommunity.slack.com/messages/general/)
 
 ### phase II
 - [ ] accounts and user login
