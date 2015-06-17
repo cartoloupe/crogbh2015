@@ -9,7 +9,8 @@ community resources online give back hack 2015
 - [ ] add search
 - [ ] implement design
 - [ ] tags on the page
-- [ ] icons
+- [x] icons
+  - [bootstrap components](http://getbootstrap.com/components/)
 - [ ] sort by relevance
 - [ ] convert criteria to checklist
 - [x] [slack channel](https://onesourcecommunity.slack.com/messages/general/)
