@@ -2,6 +2,7 @@
 community resources online give back hack 2015
 
 ## next steps
+[some requirements from notes](REQUIREMENTS.md)
 
 ### phase I
 - [ ] finish content
