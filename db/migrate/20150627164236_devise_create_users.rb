@@ -30,6 +30,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
 
+      ## Basic User Details
+      # some culture's names can compound and get very long
+      t.string :first_name, limit: 70
+      t.string :last_name,  limit: 70
+
       t.timestamps null: false
     end
 

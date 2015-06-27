@@ -1,10 +1,6 @@
 class CreateEndUserDetails < ActiveRecord::Migration
   def change
     create_table :end_user_details do |t|
-      # some culture's names can compound and get very long
-      t.string :first_name,     limit: 70
-      t.string :last_name,      limit: 70
-
       # 40 the usps limit on line length
       t.string :address_line_1, limit: 40
       t.string :address_line_2, limit: 40
