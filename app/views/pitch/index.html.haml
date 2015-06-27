@@ -1,0 +1,16 @@
+#carousel-example-generic.carousel.slide{"data-interval" => "false", "data-ride" => "carousel"}
+  / Wrapper for slides
+  .carousel-inner
+    .item.active
+      = image_tag(@images.first, class: "screenshot")
+    - @images[1..-2].map do |screenshot|
+      .item
+        = image_tag(screenshot, class: "screenshot")
+    .item
+      = link_to(image_tag(@images.last), {controller: 'welcome', method: :get}, {method: :get, class: 'btn-default btn-lg'})
+  / Controls
+  %a.left.carousel-control.custom{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control.custom{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
+    %span.glyphicon.glyphicon-chevron-right
+/ Carousel

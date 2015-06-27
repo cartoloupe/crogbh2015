@@ -1,0 +1,7 @@
+.whole
+  .top
+    .titleholder
+      = image_tag('OneSource.png', class: "logo")
+      %h1 OneSource
+  = button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'}
+  = button_to 'employment', {controller: 'employment', method: :get}, {method: :get, class: 'btn-default btn-lg'}
