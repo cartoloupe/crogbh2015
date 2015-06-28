@@ -29,9 +29,12 @@
         var map = new google.maps.Map(mapCanvas, mapOptions)
       }
       google.maps.event.addDomListener(window, 'load', initialize);
-  %body
-    - if alert
-      .alert.alert-danger= alert
-    - if notice
-      .alert.alert-success= notice
-    = yield
+  %body.container
+    .col-md-12
+      .row
+        - if alert
+          .alert.alert-danger= alert
+        - if notice
+          .alert.alert-success= notice
+      .row
+        = yield

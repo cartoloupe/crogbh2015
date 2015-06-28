@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
 
   root 'welcome#index'
 
@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'veterans/index'
   get 'freeclinics/index'
   get 'welcome/index'
+
+  get 'signup', to: 'end_user#new', as: :new_end_user
 end

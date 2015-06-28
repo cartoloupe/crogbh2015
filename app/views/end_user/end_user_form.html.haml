@@ -1,0 +1,53 @@
+%h2 Sign up
+%form.form-horizontal{action: new_end_user_path, method: :post}
+  - @user.errors.full_messages.each do |message|
+    .alert.alert-danger= message
+  .form-group
+    %label.col-md-2.control-label{for: 'email'} Email
+    .col-md-10
+      %input#email.form-control{type: :email,
+        name:      'user[email]',
+        autofocus: true}
+  .form-group
+    %label.col-md-2.control-label{for: 'password'} Password
+    .col-md-4
+      %input#password.form-control{type: :password,
+        name:         'user[password]',
+        autocomplete: false}
+    %label.col-md-2.control-label{for: 'password-confirmation'} Confirm Password
+    .col-md-4
+      %input#password-confirmation.form-control{type: :password,
+        name:         'user[password_confirmation]',
+        autocomplete: false}
+  .form-group
+    %label.col-md-2.control-label{for: 'first-name'} First Name
+    .col-md-4
+      %input#first-name.form-control{type: :text,
+        name: 'user[first_name]'}
+    %label.col-md-2.control-label{for: 'last-name'} Last Name
+    .col-md-4
+      %input#last-name.form-control{type: :text,
+        name: 'user[last_name]'}
+  .form-group
+    %label.col-md-2.control-label{for: 'address-line-1'} Address
+    .col-md-10
+      %input#address-line-1.form-control{name: 'detail[address_line_1]',
+        maxlength: 40}
+      %input#address-line-2.form-control{name: 'detail[address_line_2]',
+        maxlength: 40}
+      %input#address-line-3.form-control{name: 'detail[address_line_3]',
+        maxlength: 40}
+  .form-group
+    %label.col-md-2.control-label{for: 'city'} City
+    .col-md-4
+      %input#city.form-control{name: 'detail[city]',
+        maxlength: 23}
+    %label.col-md-2.control-label{for: 'state'} State
+    .col-md-4
+      %input#state.form-control{name: 'detail[state]',
+        maxlength: 2}
+  .form-group
+    .col-md-10.col-md-offset-2
+      %button.btn.btn-primary.form-control{type: :submit} Sign Up
+-# = render "devise/shared/links"
+-#

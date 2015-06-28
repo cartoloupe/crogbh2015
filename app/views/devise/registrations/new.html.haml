@@ -16,6 +16,14 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name, maxlength: 70
+  .field
+    = f.label :last_name
+    %br/
+    = f.text_field :last_name, maxlength: 70
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
