@@ -5,3 +5,9 @@
       %h1 OneSource
   = button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'}
   = button_to 'employment', {controller: 'employment', method: :get}, {method: :get, class: 'btn-default btn-lg'}
+  %br
+  - @all_the_sections.map do |button_text|
+    = button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'}
+  %br
+
+  = button_to 'demo', {controller: 'pitch', method: :get}, {method: :get, class: 'btn-default btn-lg btn demo'}

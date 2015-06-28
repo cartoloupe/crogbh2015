@@ -3,17 +3,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
   get 'mockup', to: 'pitch#index'
-
   get 'pitch/index'
-
   get 'pregnancy/index'
-
   get 'veterans/index'
-
   get 'freeclinics/index'
-
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
