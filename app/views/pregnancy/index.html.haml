@@ -9,8 +9,24 @@
   %p
     = render 'phoneno'
     Contact Diane Bauman at 614-259-5318.
+
   %div{:style => "width: 400px;"}
-    #map{:style => "width: 400px; height: 400px;"}
+
+  %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDlclED-Bjpp1k2RtYeVBv2zcoMOlbVTVs", :type => "text/javascript"}
+  :css
+    #map-canvas { height: 400px; margin: 0; padding: 0;}
+  :javascript
+    function initialize() {
+      var mapOptions = {
+        center: { lat: -34.397, lng: 150.644},
+        zoom: 8
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  #map-canvas
+
 %br
 .box
   %b Caring for 2
