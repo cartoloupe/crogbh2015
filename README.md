@@ -6,7 +6,7 @@ community resources online give back hack 2015
 
 ### phase I
 - [ ] finish content
-- [ ] embed maps
+- [x] embed maps
 - [ ] add search
 - [ ] implement design
 - [ ] tags on the page
