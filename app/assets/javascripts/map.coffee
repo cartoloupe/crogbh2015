@@ -15,3 +15,4 @@ codeAddress = (address, mapdivid) ->
         position: results[0].geometry.location)
     return
   return
+window['codeAddress'] = codeAddress

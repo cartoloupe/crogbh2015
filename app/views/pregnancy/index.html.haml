@@ -9,15 +9,7 @@
   %p
     = render 'phoneno'
     Contact Diane Bauman at 614-259-5318.
-
-  %div{:style => "width: 400px;"}
-
-  %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDlclED-Bjpp1k2RtYeVBv2zcoMOlbVTVs", :type => "text/javascript"}
-  :css
-    #map-canvas { height: 400px; width: 400px; margin: 0; padding: 0;}
-  :javascript
-    $(function(){codeAddress('6000 Cooper Road, Westerville, Ohio 43081', 'map-canvas')});
-  #map-canvas
+  = display_map '6000 Cooper Road, Westerville, Ohio 43081'
 
 %br
 .box
@@ -31,6 +23,7 @@
   %p
     = render 'phoneno'
     614-645-7068.
+  = display_map '130 chestnut street, columbus, Ohio'
 %br
 .box
   %b The Neighborhood House
