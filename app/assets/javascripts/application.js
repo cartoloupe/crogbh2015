@@ -13,9 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require hammer
 //= require bootstrap-sprockets
 //= require_tree .
-//= require_tree ../../../vendor/assets/javascripts/.
-//= require general
-

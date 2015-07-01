@@ -1,47 +1,52 @@
 class WelcomeController < ApplicationController
   def index
-    @other_section = [
-      'holiday assistance',
-      'teen resources',
-    ]
+    @all_the_sections = [
+      @other_section = [
+        'holiday assistance',
+        'teen resources',
+      ],
 
-    @health_section = [
-      'addiction and recovery',
-      'counseling',
-    ]
+      @health_section = [
+        'addiction and recovery',
+        'counseling',
+      ],
 
-    @kids_section = [
-      'after school programming',
-      'childcare centers',
-      'school supplies',
-      'youth programs / special needs',
-    ]
+      @kids_section = [
+        'after school programming',
+        'childcare centers',
+        'school supplies',
+        'youth programs / special needs',
+      ],
 
-    @housing_section = [
-      'housing',
-      'rent assistance',
-      'utility assistance',
-    ]
+      @housing_section = [
+        'housing',
+        'rent assistance',
+        'utility assistance',
+      ],
 
-    @education_section = [
-      'training and education',
-      'GED information',
-      'english as a 2nd language',
-    ]
+      @education_section = [
+        'training and education',
+        'GED information',
+        'english as a 2nd language',
+      ],
 
-    @food_and_goods_section = [
-      'material assistance',
-      'furniture',
-      'clothing',
-      'food pantries',
-    ]
+      @food_and_goods_section = [
+        'material assistance',
+        'furniture',
+        'clothing',
+        'food pantries',
+      ],
 
-    @services_section = [
-      'transportation services',
-      'legal services',
-      'budgeting help',
-      'cell phones (computers and internet)',
-    ]
+      @services_section = [
+        'transportation services',
+        'legal services',
+        'budgeting help',
+        'cell phones (computers and internet)',
+        'veterans',
+        'employment',
+        'pregnancy support',
+      ],
+    ].flatten
 
   end
 end

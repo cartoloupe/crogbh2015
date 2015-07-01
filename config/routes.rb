@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # devise_for :users
 
   root 'welcome#index'
-
   get 'mockup', to: 'pitch#index'
 
   get 'employment/index'
