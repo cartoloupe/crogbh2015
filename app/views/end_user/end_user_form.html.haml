@@ -7,7 +7,7 @@
     .col-md-10
       %input#email.form-control{type: :email,
         name:      'user[email]',
-        autofocus: true}
+        autofocus: true}= @user.email
   .form-group
     %label.col-md-2.control-label{for: 'password'} Password
     .col-md-4
@@ -23,29 +23,39 @@
     %label.col-md-2.control-label{for: 'first-name'} First Name
     .col-md-4
       %input#first-name.form-control{type: :text,
-        name: 'user[first_name]'}
+        name: 'user[first_name]'}= @user.first_name
     %label.col-md-2.control-label{for: 'last-name'} Last Name
     .col-md-4
       %input#last-name.form-control{type: :text,
-        name: 'user[last_name]'}
+        name: 'user[last_name]'}= @user.last_name
   .form-group
-    %label.col-md-2.control-label{for: 'address-line-1'} Address
+    %label.col-md-2.control-label Gender
+    .col-md-4
+      %label.radio-inline
+        %input{type: :radio, name: 'gender', value: 'M', checked: (@detail.gender == 'M')} Male
+      %label.radio-inline
+        %input{type: :radio, name: 'gender', value: 'F', checked: (@detail.gender == 'F')} Female
+      %label.radio-inline
+        %input{type: :radio, name: 'gender', value: 'O', checked: !(['M', 'F', ''].member? @detail.gender.to_s)} Other
+      %label.radio-inline
+        %input{type: :radio, name: 'gender', value: '', checked: @detail.gender.to_s == ''} No Answer
+    %label.col-md-2.control-label{for: 'phone-number'} Phone Number
+    .col-md-4
+      %input#phone-number.form-control{type: :text,
+        name: 'detail[phone_number]'}= @detail.phone_number
+  .form-group
+    %label.col-md-2.control-label{for: 'address'} Address
     .col-md-10
-      %input#address-line-1.form-control{name: 'detail[address_line_1]',
-        maxlength: 40}
-      %input#address-line-2.form-control{name: 'detail[address_line_2]',
-        maxlength: 40}
-      %input#address-line-3.form-control{name: 'detail[address_line_3]',
-        maxlength: 40}
+      %textarea#address.form-control{rows: 3}= @detail.address
   .form-group
     %label.col-md-2.control-label{for: 'city'} City
     .col-md-4
       %input#city.form-control{name: 'detail[city]',
-        maxlength: 23}
+        maxlength: 23}= @detail.city
     %label.col-md-2.control-label{for: 'state'} State
     .col-md-4
       %input#state.form-control{name: 'detail[state]',
-        maxlength: 2}
+        maxlength: 2}= @detail.state
   .form-group
     .col-md-10.col-md-offset-2
       %button.btn.btn-primary.form-control{type: :submit} Sign Up
