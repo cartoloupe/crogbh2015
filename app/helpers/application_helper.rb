@@ -4,7 +4,7 @@ module ApplicationHelper
     divid = SecureRandom.uuid
     hamlchunk = <<HEREDOC
 :javascript
-  $(function(){codeAddress("#{address}", "#{divid}")});
+  $(function(){codeAddress("#{address.gsub(/\n/, '')}", "#{divid}")});
 ##{divid}.map
 HEREDOC
 
