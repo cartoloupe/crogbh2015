@@ -1,6 +1,10 @@
 # crogbh2015
 community resources online give back hack 2015
 
+## Tutorials
+
+[Quick YAML Guide](yaml-guide.md)
+
 ## next steps
 [some requirements from notes](REQUIREMENTS.md)
 

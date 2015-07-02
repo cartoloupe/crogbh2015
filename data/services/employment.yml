@@ -1,47 +1,8 @@
-# lines starting with pound characters are comments
-#
-# lines starting with hyphens are list items
-#
-# indentation happens in multiples of 2 spaces.
-#
-# phone numbers and addresses may be single entries or lists.
-# single entries belong on the same line.
-# lists belong indented starting on the next line.
-# some examples:
-#
-#    address: 1 Lonely Avenue, Columbus, OH
-#
-# or
-#
-#    address:
-#      - 123 First Address Road, Columbus, OH
-#      - 456 Second Address Place, Columbus, OH
-#
-# if you have a long block of text that would be hard to read
-# in this yaml file, you may use the pipe character as a value,
-# and then use an indented block to write as many lines as you need.
-# an example:
-#
-#     description: |
-#       This is a really long description that is going to look
-#       awkward if I jam it all onto one line so I've decided to
-#       use a multi-line block.
-#
-# this file is one giant list of objects, so make sure each
-# entry begins with a single hyphen, followed by all the attributes
-# you'd like to include in the object.
-#
-# the currently available attributes are:
-#   title               required
-#   description         required
-#   phone               optional    single entry or list
-#   mailing_address     optional    single entry or list
-#   physical_address    optional    single entry or list
-
 -
   title: Office of Workforce Development
-  description: |
-    Many resources available through Ohio Office of Workforce Development at.
+  description: >
+    Many resources available through Ohio Office of Workforce
+    Development at.
     [More Information](http://jfs.ohio.gov/owd/JobSeekers/index.stm)
   phone:            1-888-296-7541, Option 3
   extension:        3
@@ -65,7 +26,7 @@
       Columbus, OH
 -
   title: COWIC
-  description: |
+  description: >
     Offers a computer lab with job listings and career counselors.
     They also offer financial assistance programs for employment
     training, college classes, and GED classes.
@@ -77,7 +38,7 @@
     Columbus, OH 43205
 -
   title: IMPACT Employment Plus Program
-  description: |
+  description: >
     Offers an intensive work readiness certification program
     tailored specifically for those who are disengaged from the
     workforce and need basic knowledge in order to return to entry
