@@ -20,7 +20,7 @@ service.
 Attribute          | Required | Cardinality
 ------------------ | -------- | -----------
 `title`            | Yes      | Single Value
-`description`      | Yes      | Single Value<sup>1</sup>
+`description`      | No       | Single Value<sup>1</sup>
 `phone`            | No       | Single Value or List
 `mailing_address`  | No       | Single Value or List
 `physical_address` | No       | Single Value or List
@@ -30,7 +30,7 @@ Attribute          | Required | Cardinality
 <sup>1</sup>The `description` attribute accepts Markdown.
 Because of this, you should always use the "literal string"
 method of breaking up long text, which is explained later on
-in this guide. Please see the [Markdown Guide](/markdown-guide.md)
+in this guide. Please see the [Markdown Guide](guides/markdown.md)
 for information on how to use Markdown.
 
 ## YAML Syntax
