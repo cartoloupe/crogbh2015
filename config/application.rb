@@ -28,5 +28,6 @@ module CommunityResourcesOnline
       'X-Frame-Options' => ''
     }
 
+    config.autoload_paths += %W(#{Rails.root}/lib/)
   end
 end

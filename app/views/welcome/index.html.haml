@@ -3,11 +3,13 @@
     .titleholder
       = image_tag('OneSource.png', class: "logo")
       %h1 OneSource
-  = button_to 'pregnancy support', {controller: 'pregnancy', method: :get}, {method: :get, class: 'btn-default btn-lg'}
-  = button_to 'employment', {controller: 'employment', method: :get}, {method: :get, class: 'btn-default btn-lg'}
-  %br
-  - @all_the_sections.map do |button_text|
-    = button_to button_text, {controller: 'veterans', method: :get}, {method: :get, class: 'btn-default btn-lg'}
-  %br
+  // %a.btn.btn-default{href: category_path('pregnancy')} Pregnancy
+  // %a.btn.btn-default{href: category_path('employment')} Employment
+  // %br
+  // - @all_the_sections.map do |button_text|
+  //   %a.btn.btn-default{href: category_path('veterans')} Veterans
+  // %br
+  - Services.categories.each do |category|
+    %a.btn.btn-default.btn-lg{href: category_path(category)}= humanize category
 
   = button_to 'demo', {controller: 'pitch', method: :get}, {method: :get, class: 'btn-default btn-lg btn demo'}
