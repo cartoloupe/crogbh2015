@@ -4,7 +4,9 @@
     %b= service[:title]
     %p= raw service[:description]
     - if service[:website].present?
-      %a{href: service[:website]}= service[:website]
+      %a{href: service[:website]}
+        %span.btn.btn-lg.glyphicon.glyphicon-share-alt
+        = service[:website]
     - service[:phone].each do |phone|
       %p
         = render 'phoneno'
