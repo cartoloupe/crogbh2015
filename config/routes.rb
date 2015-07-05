@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'mockup', to: 'pitch#index'
-  get ':category', to: 'service#category'
+  get ':category', to: 'service#category', as: :category
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
