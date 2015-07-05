@@ -1,19 +1,22 @@
+# Check out the YAML guide in the project's root folder for
+# information on how to edit this file.
+
 -
   title: Office of Workforce Development
-  description: >
-    Many resources available through Ohio Office of Workforce
-    Development at.
-    [More Information](http://jfs.ohio.gov/owd/JobSeekers/index.stm)
-  phone:            1-888-296-7541, Option 3
-  extension:        3
+  description:
+  website: http://jfs.ohio.gov/owd/JobSeekers/index.stm
+  phone: 1-888-296-7541, Option 3
   mailing_address: |
     P.O. Box 1618
     Columbus, OH 43216-1618
-  email:            WIAQNA@jfs.ohio.gov
+  email: WIAQNA@jfs.ohio.gov
 -
-  title:            Columbus Urban League
-  description:      Summer program for young adults 14-18, New Beginnings program- four-week career transition guidance. #{render 'linkto', link: 'http://www.cul.org/cul-workforce-development-car/'}
-  phone:            1-614-257-6300
+  title: Columbus Urban League
+  description:
+    Summer program for young adults 14-18, New Beginnings
+    program provides four-week career transition guidance.
+  website: http://www.cul.org/cul-workforce-development-car
+  phone: 1-614-257-6300
   physical_address:
     - |
       788 Mount Vernon Avenue
@@ -26,11 +29,11 @@
       Columbus, OH
 -
   title: COWIC
-  description: >
+  description: |
     Offers a computer lab with job listings and career counselors.
     They also offer financial assistance programs for employment
     training, college classes, and GED classes.
-    [More Information](http://www.cowic.org/)
+  website: http://www.cowic.org
   phone: 614-559-5052
   physical_address: |
     1111 E. Broad St.
@@ -38,13 +41,13 @@
     Columbus, OH 43205
 -
   title: IMPACT Employment Plus Program
-  description: >
+  description: |
     Offers an intensive work readiness certification program
     tailored specifically for those who are disengaged from the
     workforce and need basic knowledge in order to return to entry
     level employment opportunities. 120 hour, stipend subsidized
     course accelerated over 4 consecutive weeks.
-    [More Information](http://www.impactca.org/welcome/)
+  website: http://www.impactca.org/welcome
   phone: 614-453-1712
   physical_address: |
     700 Bryden Rd.

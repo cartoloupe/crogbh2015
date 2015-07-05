@@ -1,8 +1,10 @@
-%h1 Employment
-- Services[:employment].each do |service|
+%h1= @category_name
+- Services[@category].each do |service|
   .box
     %b= service[:title]
-    %p= service[:description]
+    %p= raw service[:description]
+    - if service[:website].present?
+      %a{href: service[:website]}= service[:website]
     - service[:phone].each do |phone|
       %p
         = render 'phoneno'

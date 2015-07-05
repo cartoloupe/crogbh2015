@@ -20,11 +20,18 @@ service.
 Attribute          | Required | Cardinality
 ------------------ | -------- | -----------
 `title`            | Yes      | Single Value
-`description`      | Yes      | Single Value
+`description`      | Yes      | Single Value<sup>1</sup>
 `phone`            | No       | Single Value or List
 `mailing_address`  | No       | Single Value or List
 `physical_address` | No       | Single Value or List
 `email`            | No       | Single Value
+`website`          | No       | Single Value
+
+<sup>1</sup>The `description` attribute accepts Markdown.
+Because of this, you should always use the "literal string"
+method of breaking up long text, which is explained later on
+in this guide. Please see the [Markdown Guide](/markdown-guide.md)
+for information on how to use Markdown.
 
 ## YAML Syntax
 
@@ -47,11 +54,6 @@ Lists are defined by creating entities beginning with hyphens.
 ```
 
 ### Attributes
-
-Attributes are defined by creating entities in a `key: value` format.
-It is my personal preference to align groups of values vertically,
-but this is *not* a YAML requirement and nothing bad will happen
-if you don't. It just looks nicer.
 
 ```yaml
 first_thing:  I'm the first thing.

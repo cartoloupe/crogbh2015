@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'ice_nine'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug'

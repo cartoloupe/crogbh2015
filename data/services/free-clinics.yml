@@ -1,0 +1,51 @@
+# Check out the YAML guide in the project's root folder for
+# information on how to edit this file.
+
+-
+  title: Near Northside Emergency Material Assistance Program (NNEMAP)
+  description: |
+    Open to residents in 43201, 43211, and 43215.
+
+    * Four times a year, NNEMAP provides access to
+      the Breathing Association’s medical van. Free physicals and x-rays.
+    * Once a month, nurses from the Columbus Public Health Dept. visit
+      to give flu shots, check blood pressure, sugar levels, etc.
+  physical_location: 1064 N High St, 43201
+  phone: 614-297-0533
+-
+  title: Victory Ministries
+  description: |
+    Primary care, prescription assistance, disease screenings,
+    work and school physicals, prevention and care for hyperglycemia
+    and hypertension, and more. Open to all Central Ohio zip codes.
+    Patients seen in order of arrival.
+
+    Hours: 2nd Thursday of each month from 6:00 – 8:30 pm
+  phone: 614-252-2500
+  physical_address: |
+    Living Hope Free Methodist Church
+    4142 Westerville Road
+    Columbus, OH 43224
+-
+  title: United Methodist Free Store
+  description: |
+    Nursing services are offered most Wednesdays from 3-4:30pm and
+    Thursdays from 10-11:30 am.
+  phone: 614-445-7342
+  physical_address: |
+    946 Parsons Ave
+    Columbus, OH 43206
+-
+  title: Xenos Free Clinics
+  description: |
+    Fourth Street Open on Monday.
+    Chicago Avenue open on Tuesday.
+  phone: 614-823-6510 x840 (Mondays)
+  website: http://www.xenos.org/ministries/aidfund/wsmedclinic.htm
+  physical_addresses:
+    -
+      1934 N. Fourth Street
+      Columbus, Ohio 43201
+    -
+      40 N. Chicago Avenue
+      Columbus, Ohio 43222

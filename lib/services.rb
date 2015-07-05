@@ -26,8 +26,14 @@ class Services
       service[:phone]            = Array service[:phone]
       service[:mailing_address]  = Array service[:mailing_address]
       service[:physical_address] = Array service[:physical_address]
+      service[:description]      = markdown.render service[:description].to_s
     end
     category
   end
   private_class_method :load_category
+
+  def self.markdown
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+  end
+  private_class_method :markdown
 end
