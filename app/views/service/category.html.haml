@@ -1,4 +1,4 @@
-%h1= @category_name
+%h1= humanize @category
 - Services[@category].each do |service|
   .box
     %b= service[:title]

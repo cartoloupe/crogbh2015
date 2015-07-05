@@ -5,6 +5,10 @@ class Services
     services[category]
   end
 
+  def self.categories
+    services.keys
+  end
+
   def self.services
     unless @services
       @services = {}
