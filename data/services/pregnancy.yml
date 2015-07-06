@@ -1,0 +1,139 @@
+# Check out the YAML guide in the project's root folder for
+# information on how to edit this file.
+
+-
+  title: MotherHeart Mentoring
+  description: |
+    A faith-based mentorship in which a partner will be able to
+    assist you through the pregnancy, birth, and parenting of your
+    child. They can link you to many resources, including education,
+    material needs, and adoption agency information if requested.
+  phone: Diane Bauman at 614-259-5318.
+  physical_address: |
+    6000 Cooper Road
+    Westerville, Ohio 43081
+-
+  title: Caring for 2
+  website: http://publichealth.columbus.gov/caring-for-2.aspx
+  description: |
+    An in-home visitation program which helps you to access healthcare
+    services, apply for WIC and Medicaid, and offer education on child
+    development and parenting.
+
+    Open to African-American women in the following zip codes:
+    * 43201
+    * 43203
+    * 43205
+    * 43206
+    * 43207
+    * 43209
+    * 43211
+    * 43215
+    * 43219
+  phone: 614-645-7068
+  physical_address: |
+    130 Chestnut Street
+    Columbus, Ohio
+-
+  title: The Neighborhood House
+  website: http://colsnhi.org/fhome
+  description: |
+    Offers classes for expectant parents and parents of children up to
+    age 24 months. Topics cover community resources, alcohol, drugs,
+    health, mental health, insurance, safety, fatherhood, goal
+    setting, financial literacy, child development, and nutrition.
+  phone: 614-252-4941
+  physical_address: |
+    1000 Atcheson Street
+    43203
+-
+  title: Grace Fellowship Church's Maternity Resource Center
+  website: http://www.gracefcwesterville.org/maternity-resource-center
+  description: |
+    Faith-based resource center. Serves Westerville and Columbus area.
+    Offers maternity clothing and baby and toddler clothing, up to age
+    3 only.
+
+    Hours: Open one Saturday per month or Thursdays by appointment at
+    10 am.
+
+    Returning clients may walk-in. New clients must walk-in between
+    8:30 am and 9:30 am and will go through a brief interview.
+  phone: 614-890-0078 ext. 17
+  physical_address: |
+    3475 Paris Boulevard
+    Westerville, Ohio 43081
+-
+  title: Baptists for Life of Central Ohio's Maternity Resource Center
+  website: http://www.bflco.org/maternity-resource-center
+  description:
+    Provides maternity clothing and children's clothing up to size 6X,
+    disposable diapers, and some baby furniture and equipment.
+
+    Walk-in Hours
+
+    * Wednesday 6:30 - 8 pm
+    * Saturday 10 am - 12:30 pm
+  phone: 614-272-7038
+  physical_address: |
+    Immanuel Baptist Church
+    3417 Palmetto St
+    43204
+-
+  title: Pregnancy Decisions Health Centers
+  description: |
+    Campus Care Center - Offers maternity clothing, baby clothing up
+    to size 2T, and baby supplies.
+
+    Hours
+
+    * Monday 9am - 5pm
+    * Tuesday Friday 9am - 4pm
+    * Saturday 9am - 1pm
+  phone: 614-444-4411
+  physical_address: |
+    6 E. 17th Ave
+    43201
+-
+  title: Pregnancy Decision Health Centers
+  description: |
+    Linden Care Center - Offers maternity clothing, baby clothing up
+    to size 2T, and baby supplies.
+
+    Hours: Monday 9am - 5pm
+  phone: 614-444-4411
+  physical_address: |
+    2052 Cleveland Ave
+    43211
+-
+  title: Pregnancy Decision Health Centers
+  description: |
+    West Care Center - Offers maternity clothing, baby clothing up
+    to size 2T, and baby supplies.
+
+    Hours
+
+    * Monday - Tuesday 10am - 5pm
+    * Wednesday 10am - 8pm
+    * Thursday 11pm - 7pm
+    * Friday 10am - 5pm
+    * Saturday 9am - 1pm
+  phone: 614-444-4411
+  physical_address: |
+    4111 W. Broad St.j
+    43228
+-
+  title: Pregnancy Decision Health Centers
+  description: |
+    North Care Center - Offers maternity clothing, baby clothing up
+    to size 2T, and baby supplies.
+
+    Hours
+
+    * Monday - Wednesday 9am - 8pm
+    * Thursday - Friday 9am - 5pm
+    * Saturday 9am - 1pm
+  phone: 614-444-4411
+  physical_address: |
+    5900 Cleveland Ave.
+    43231
