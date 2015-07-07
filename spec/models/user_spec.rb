@@ -3,12 +3,32 @@ require 'rails_helper'
 describe User do
   # shared contexts
 
-  shared_context 'it has a bad email' do
+  ## email
+
+  shared_context 'it has a valid email' do
+    subject { build :user, email: email }
+    it { is_expected.to be_valid }
+  end
+
+  shared_context 'it has a invalid email' do
     subject { build :user, email: email }
     it { is_expected.not_to be_valid }
   end
 
-  shared_context 'it has a bad password' do
+  ## password
+
+  shared_context 'it has a valid password' do
+    subject do
+      build :user, {
+        password:              password,
+        password_confirmation: password,
+      }
+    end
+
+    it { is_expected.to be_valid }
+  end
+
+  shared_context 'it has a invalid password' do
     subject do
       begin
         confirmation = password_confirmation
@@ -25,66 +45,122 @@ describe User do
     it { is_expected.not_to be_valid }
   end
 
-  shared_context 'it has a bad first name' do
+  ## first_name
+
+  shared_context 'it has a valid first name' do
+    subject { build :user, first_name: first_name }
+    it { is_expected.to be_valid }
+  end
+
+  shared_context 'it has a invalid first name' do
     subject { build :user, first_name: first_name }
     it { is_expected.not_to be_valid }
   end
 
-  shared_context 'it has a bad last name' do
+  ## last_name
+
+  shared_context 'it has a valid last name' do
+    subject { build :user, last_name: last_name }
+    it { is_expected.to be_valid }
+  end
+
+  shared_context 'it has a invalid last name' do
     subject { build :user, last_name: last_name }
     it { is_expected.not_to be_valid }
   end
 
-  shared_context 'it has bad details' do
+  ## details
+
+  shared_context 'it has valid details' do
+    subject { build :user, details: details }
+    it { is_expected.to be_valid }
+  end
+
+  shared_context 'it has invalid details' do
     subject { build :user, details: details }
     it { is_expected.not_to be_valid }
   end
 
   # tests
 
-  context "with no email" do
+  ## email
+
+  context 'with no email' do
     let(:email) { '' }
-    it_behaves_like 'it has a bad email'
+    it_behaves_like 'it has a invalid email'
   end
 
-  context "with no password" do
+  context 'with an email' do
+    let(:email) { 'test@example.com' }
+    it_behaves_like 'it has a valid email'
+  end
+
+  ## password
+
+  context 'with a valid password' do
+    let(:password) { '12345678' }
+    it_behaves_like 'it has a valid password'
+  end
+
+  context 'with no password' do
     let(:password) { '' }
-    it_behaves_like 'it has a bad password'
+    it_behaves_like 'it has a invalid password'
   end
 
-  context "with a password and password_confirmation that do not match" do
+  context 'with a password and password_confirmation that do not match' do
     let(:password)              { '12345678' }
-    let(:password_confirmation) { password + '9' }
-    it_behaves_like 'it has a bad password'
+    let(:password_confirmation) { '123456789' }
+    it_behaves_like 'it has a invalid password'
   end
 
-  context "with a password less than 8 characters" do
-    let(:password) { '1234567' }
-    it_behaves_like 'it has a bad password'
+  context 'with a password less than 8 characters' do
+    let(:password) { 'x' * 7 }
+    it_behaves_like 'it has a invalid password'
   end
 
-  context "with a password more than 72 characters" do
-    let(:password) { '1234567890' * 7 + '123' }
-    it_behaves_like 'it has a bad password'
+  context 'with a password more than 72 characters' do
+    let(:password) { 'x' * 73 }
+    it_behaves_like 'it has a invalid password'
   end
 
-  context "with no first name" do
+  ## first name
+
+  context 'with a first name' do
+    let(:first_name) { 'Joanna' }
+    it_behaves_like 'it has a valid first name'
+  end
+
+  context 'with no first name' do
     let(:first_name) { '' }
-    it_behaves_like 'it has a bad first name'
+    it_behaves_like 'it has a invalid first name'
   end
 
-  context "with no last name" do
+  ## last name
+
+  context 'with a last name' do
+    let(:last_name) { 'Smith' }
+    it_behaves_like 'it has a valid last name'
+  end
+
+  context 'with no last name' do
     let(:last_name) { '' }
-    it_behaves_like 'it has a bad last name'
+    it_behaves_like 'it has a invalid last name'
   end
 
-  context "with no details" do
+  ## details
+
+  context 'with valid details' do
+    let(:details) { build :end_user_detail }
+    it_behaves_like 'it has valid details'
+  end
+
+  context 'with no details' do
     let(:details) { nil }
-    it_behaves_like 'it has bad details'
+    it_behaves_like 'it has invalid details'
   end
 
-  context "with invalid details" do
+  context 'with invalid details' do
     let(:details) { build :end_user_detail, zip: '4444' }
-    it_behaves_like 'it has bad details'
+    it_behaves_like 'it has invalid details'
   end
 end

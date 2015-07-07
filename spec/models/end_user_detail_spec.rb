@@ -39,7 +39,15 @@ describe EndUserDetail do
     it { is_expected.not_to be_valid }
   end
 
+  # subject
+
+  subject { build :end_user_detail }
+
   # tests
+
+  ## general
+
+  it { is_expected.to respond_to :user }
 
   ## zip
 
