@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20150628170403) do
   end
 
   create_table "end_user_details", force: :cascade do |t|
-    t.string   "city",         limit: 22
-    t.string   "state",        limit: 2
-    t.string   "zip",          limit: 9
-    t.string   "gender",       limit: 1
-    t.string   "phone_number", limit: 10
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "city",       limit: 22
+    t.string   "state",      limit: 2
+    t.string   "zip",        limit: 9
+    t.string   "gender",     limit: 1
+    t.string   "phone",      limit: 10
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.text     "address"
   end
 

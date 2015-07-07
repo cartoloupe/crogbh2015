@@ -24,7 +24,7 @@ class CreateEndUserDetails < ActiveRecord::Migration
       # Store 10 chars
       #   Store only area code, exchange, and station digits
       #   Add country code and separators for display
-      t.string :phone_number,   limit: 10
+      t.string :phone,          limit: 10
 
       t.timestamps null: false
     end

@@ -3,30 +3,50 @@ require 'rails_helper'
 describe EndUserDetail do
   # shared contexts
 
+  ## zip
+
   shared_context 'it has a valid zip code' do
-    subject { create :end_user_detail, zip: zip }
+    subject { build :end_user_detail, zip: zip }
     it { is_expected.to be_valid }
   end
 
   shared_context 'it has an invalid zip code' do
-    subject { create :end_user_detail, zip: zip }
+    subject { build :end_user_detail, zip: zip }
     it { is_expected.not_to be_valid }
+  end
+
+  ## phone
+
+  shared_context 'it has a valid phone number' do
+    subject { build :end_user_detail, phone: phone }
+    it { is_expected.to be_valid }
   end
 
   shared_context 'it has an invalid phone number' do
-    subject { create :end_user_detail, phone: phone }
+    subject { build :end_user_detail, phone: phone }
     it { is_expected.not_to be_valid }
   end
 
+  ## state
+
+  shared_context 'it has a valid state' do
+    subject { build :end_user_detail, state: state }
+    it { is_expected.to be_valid }
+  end
+
   shared_context 'it has an invalid state' do
-    subject { create :end_user_detail, state: state }
+    subject { build :end_user_detail, state: state }
     it { is_expected.not_to be_valid }
   end
 
   # tests
 
-  # not necessary because FactoryGirl ensures the factory creates a valid instance
-  # it { is_expected.to be_valid }
+  ## zip
+
+  context 'with a blank zip code' do
+    let(:zip) { '' }
+    it_behaves_like 'it has a valid zip code'
+  end
 
   context 'with a 5 digit zip code' do
     let(:zip) { '12345' }
@@ -58,22 +78,46 @@ describe EndUserDetail do
     it_behaves_like 'it has an invalid zip code'
   end
 
+  ## phone number
+
+  context 'with a blank phone number' do
+    let(:phone) { '' }
+    it_behaves_like 'it has a valid phone number'
+  end
+
+  context 'with a 10 digit phone number' do
+    let(:phone) { '1234567890' }
+    it_behaves_like 'it has a valid phone number'
+  end
+
   context 'with a phone number that is less than 10 digits' do
-    let(:phone_number) { '123456789' }
+    let(:phone) { '123456789' }
     it_behaves_like 'it has an invalid phone number'
   end
 
   context 'with a phone number that is more than 10 digits' do
-    let(:phone_number) { '123456789' }
+    let(:phone) { '123456789' }
     it_behaves_like 'it has an invalid phone number'
   end
 
   context 'with a phone number that contains anything but digits' do
-    let(:phone_number) { 'abc-_!def$' }
+    let(:phone) { 'abc-_!def$' }
     it_behaves_like 'it has an invalid phone number'
   end
 
-  context 'with a state abbreviation that is less than 2 chars' do
+  ## state
+
+  context 'with a blank state' do
+    let(:state) { '' }
+    it_behaves_like 'it has a valid state'
+  end
+
+  context 'with a 2 character uppercase state abbreviation' do
+    let(:state) { 'AA' }
+    it_behaves_like 'it has a valid state'
+  end
+
+  context 'with a state abbreviation that is 1 char' do
     let(:state) { 'A' }
     it_behaves_like 'it has an invalid state'
   end

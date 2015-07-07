@@ -4,21 +4,21 @@ describe User do
   # shared contexts
 
   shared_context 'it has a bad email' do
-    subject { create :user, email: email }
+    subject { build :user, email: email }
     it { is_expected.not_to be_valid }
   end
 
   shared_context 'it has a bad password' do
-    begin
-      password_confirmation
-    rescue
-      let(:password_confirmation) { password }
-    end
-
     subject do
-      create :user, {
+      begin
+        confirmation = password_confirmation
+      rescue
+        confirmation = password
+      end
+
+      build :user, {
         password:              password,
-        password_confirmation: password_confirmation,
+        password_confirmation: confirmation,
       }
     end
 
@@ -26,17 +26,17 @@ describe User do
   end
 
   shared_context 'it has a bad first name' do
-    subject { create :user, first_name: first_name }
+    subject { build :user, first_name: first_name }
     it { is_expected.not_to be_valid }
   end
 
   shared_context 'it has a bad last name' do
-    subject { create :user, last_name: last_name }
+    subject { build :user, last_name: last_name }
     it { is_expected.not_to be_valid }
   end
 
   shared_context 'it has bad details' do
-    subject { create :user, details: details }
+    subject { build :user, details: details }
     it { is_expected.not_to be_valid }
   end
 
@@ -84,7 +84,7 @@ describe User do
   end
 
   context "with invalid details" do
-    let(:details) { create :end_user_detail, zip: '4444' }
+    let(:details) { build :end_user_detail, zip: '4444' }
     it_behaves_like 'it has bad details'
   end
 end
