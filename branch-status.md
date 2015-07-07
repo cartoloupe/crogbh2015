@@ -1,0 +1,49 @@
+To-Do:
+
+- [ ] Unit tests
+  - [ ] `User`
+    - [x] Validations
+    - [ ] Associations
+  - [ ] `EndUserDetails`
+    - [x] Validations
+    - [ ] Associations
+  - [ ] `AdminUserDetails`
+    - [x] Validations
+    - [ ] Associations
+- [ ] Functional Tests
+  - [ ] End Users
+    - [ ] Sign Up
+    - [ ] Sign Up with errors
+    - [ ] Log In
+    - [ ] Edit Account
+    - [ ] Forgot Password
+- [x] Models
+  - [x] `User`
+  - [x] `AdminuserDetails`
+  - [x] `EndUserDetails`
+- [x] Validations
+  - [x] Data Types
+    - [x] Phone Number (weak)
+    - [x] State Abbreviation (weak)
+    - [x] Zip Code (weak)
+    - [x] Valid Assocation
+  - [x] Models
+    - [x] `User`
+    - [x] `EndUserDetail`
+    - [x] `AdminUserDetail`
+- [ ] Forms *Some work done here, needs refactored into these pieces*
+  - [ ] Partials
+    - [ ] `User`
+    - [ ] `EndUserDetail`
+    - [ ] `AdminUserDetail`
+  - [ ] End User
+    - [ ] New
+    - [ ] Login
+    - [ ] Edit
+    - [ ] Forgot Password
+- [ ] Actions *Some work done here, tests need written before continuing*
+  - [ ] End User
+    - [ ] Sign Up
+    - [ ] Login
+    - [ ] Edit Account
+    - [ ] Forgot Password
