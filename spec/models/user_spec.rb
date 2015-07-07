@@ -1,75 +1,90 @@
 require 'rails_helper'
 
 describe User do
-  subject { create :user }
+  # shared contexts
 
-  it { is_expected.to be_valid }
+  shared_context 'it has a bad email' do
+    subject { create :user, email: email }
+    it { is_expected.not_to be_valid }
+  end
+
+  shared_context 'it has a bad password' do
+    begin
+      password_confirmation
+    rescue
+      let(:password_confirmation) { password }
+    end
+
+    subject do
+      create :user, {
+        password:              password,
+        password_confirmation: password_confirmation,
+      }
+    end
+
+    it { is_expected.not_to be_valid }
+  end
+
+  shared_context 'it has a bad first name' do
+    subject { create :user, first_name: first_name }
+    it { is_expected.not_to be_valid }
+  end
+
+  shared_context 'it has a bad last name' do
+    subject { create :user, last_name: last_name }
+    it { is_expected.not_to be_valid }
+  end
+
+  shared_context 'it has bad details' do
+    subject { create :user, details: details }
+    it { is_expected.not_to be_valid }
+  end
+
+  # tests
 
   context "with no email" do
-    subject { create :user, email: '' }
-    it { is_expected.not_to be_valid }
+    let(:email) { '' }
+    it_behaves_like 'it has a bad email'
   end
 
   context "with no password" do
     let(:password) { '' }
-
-    subject do
-      create :user,
-        password:              password,
-        password_confirmation: password
-    end
-
-    it { is_expected.not_to be_valid }
+    it_behaves_like 'it has a bad password'
   end
 
   context "with a password and password_confirmation that do not match" do
-    let(:password) { '' }
-
-    subject do
-      create :user,
-        password:              password,
-        password_confirmation: password + 'x'
-    end
-
-    it { is_expected.not_to be_valid }
+    let(:password)              { '12345678' }
+    let(:password_confirmation) { password + '9' }
+    it_behaves_like 'it has a bad password'
   end
 
   context "with a password less than 8 characters" do
     let(:password) { '1234567' }
-
-    subject do
-      create :user,
-        password:              password,
-        password_confirmation: password
-    end
-
-    it { is_expected.not_to be_valid }
+    it_behaves_like 'it has a bad password'
   end
 
   context "with a password more than 72 characters" do
-    let(:password) { '12345678' * 9 + '1' }
-
-    subject do
-      create :user,
-        password:              password,
-        password_confirmation: password
-    end
-
-    it { is_expected.not_to be_valid }
+    let(:password) { '1234567890' * 7 + '123' }
+    it_behaves_like 'it has a bad password'
   end
 
   context "with no first name" do
-    subject { create :user, first_name: '' }
-    it { is_expected.not_to be_valid }
+    let(:first_name) { '' }
+    it_behaves_like 'it has a bad first name'
   end
 
   context "with no last name" do
-    subject { create :user, last_name: '' }
-    it { is_expected.not_to be_valid }
+    let(:last_name) { '' }
+    it_behaves_like 'it has a bad last name'
   end
 
   context "with no details" do
-    subject { create :user, details: nil }
-    it { is_expected.not_to be_valid }
+    let(:details) { nil }
+    it_behaves_like 'it has bad details'
+  end
+
+  context "with invalid details" do
+    let(:details) { create :end_user_detail, zip: '4444' }
+    it_behaves_like 'it has bad details'
   end
 end
