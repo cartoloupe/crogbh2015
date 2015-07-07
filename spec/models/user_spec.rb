@@ -11,7 +11,50 @@ describe User do
   end
 
   context "with no password" do
-    subject { create :user, password: '', password_confirmation: '' }
+    let(:password) { '' }
+
+    subject do
+      create :user,
+        password:              password,
+        password_confirmation: password
+    end
+
+    it { is_expected.not_to be_valid }
+  end
+
+  context "with a password and password_confirmation that do not match" do
+    let(:password) { '' }
+
+    subject do
+      create :user,
+        password:              password,
+        password_confirmation: password + 'x'
+    end
+
+    it { is_expected.not_to be_valid }
+  end
+
+  context "with a password less than 8 characters" do
+    let(:password) { '1234567' }
+
+    subject do
+      create :user,
+        password:              password,
+        password_confirmation: password
+    end
+
+    it { is_expected.not_to be_valid }
+  end
+
+  context "with a password more than 72 characters" do
+    let(:password) { '12345678' * 9 + '1' }
+
+    subject do
+      create :user,
+        password:              password,
+        password_confirmation: password
+    end
+
     it { is_expected.not_to be_valid }
   end
 
