@@ -81,7 +81,13 @@ describe User do
     it { is_expected.not_to be_valid }
   end
 
+  # subject
+
+  subject { build :user }
+
   # tests
+
+  it { is_expected.to respond_to :details }
 
   ## email
 

@@ -1,16 +1,17 @@
 To-Do:
 
-- [ ] Unit tests
-  - [ ] `User`
+- [x] Unit Specs
+  - [x] `User`
     - [x] Validations
-    - [ ] Associations
-  - [ ] `EndUserDetails`
+    - [x] Associations
+  - [x] `EndUserDetails`
     - [x] Validations
-    - [ ] Associations
-  - [ ] `AdminUserDetails`
+    - [x] Associations
+  - [x] `AdminUserDetails`
     - [x] Validations
-    - [ ] Associations
-- [ ] Functional Tests
+    - [x] Associations
+- [ ] Controller Specs
+- [ ] Functional Specs
   - [ ] End Users
     - [ ] Sign Up
     - [ ] Sign Up with errors

@@ -43,6 +43,10 @@ describe EndUserDetail do
 
   subject { build :end_user_detail }
 
+  # behaviors
+
+  it_behaves_like 'a user detail model'
+
   # tests
 
   ## general
