@@ -11,13 +11,28 @@ To-Do:
     - [x] Validations
     - [x] Associations
 - [ ] Controller Specs
+  - [ ] Passing
+  - [ ] Written
+    - [ ] End User Controller
+      - [ ] `GET #new`
+      - [ ] `POST #create`
+      - [ ] `GET #show`
+      - [ ] `GET #update`
+      - [ ] `POST #update`
+      - [ ] `GET #reset_password`
+    - [ ] Service Controller
+      - [ ] `GET #category`
+    - [ ] Welcome Controller
+      - [ ] `GET #index`
 - [ ] Functional Specs
-  - [ ] End Users
-    - [ ] Sign Up
-    - [ ] Sign Up with errors
-    - [ ] Log In
-    - [ ] Edit Account
-    - [ ] Forgot Password
+  - [ ] Passing
+  - [ ] Written
+    - [ ] End Users
+      - [ ] Sign Up
+      - [ ] Sign Up with errors
+      - [ ] Log In
+      - [ ] Edit Account
+      - [ ] Forgot Password
 - [x] Models
   - [x] `User`
   - [x] `AdminuserDetails`
