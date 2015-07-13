@@ -23,9 +23,9 @@ To-Do:
       - [ ] `GET #update`
       - [ ] `POST #update`
       - [ ] `GET #reset_password`
-    - [ ] Service Controller
-      - [ ] `GET #category`
-    - [ ] Welcome Controller
+    - [x] Service Controller
+      - [x] `GET #category`
+    - [x] Welcome Controller
       - [x] `GET #index`
 - [ ] Functional Specs
   - [ ] Passing

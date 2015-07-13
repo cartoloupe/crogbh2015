@@ -10,5 +10,10 @@ describe WelcomeController do
         expect(category).to be_a Category
       end
     end
+
+    it 'renders the index template' do
+      get :index
+      expect(response).to render_template :index
+    end
   end
 end
