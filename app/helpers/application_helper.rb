@@ -9,12 +9,4 @@ HEREDOC
 
     Haml::Engine.new(hamlchunk).render
   end
-
-  def humanize input
-    input
-      .to_s
-      .split('-')
-      .map(&:capitalize)
-      .join(' ')
-  end
 end

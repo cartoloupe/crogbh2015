@@ -10,6 +10,9 @@ To-Do:
   - [x] `AdminUserDetails`
     - [x] Validations
     - [x] Associations
+  - [x] `Services`
+  - [x] `Category`
+  - [x] `Service`
 - [ ] Controller Specs
   - [ ] Passing
   - [ ] Written
@@ -23,7 +26,7 @@ To-Do:
     - [ ] Service Controller
       - [ ] `GET #category`
     - [ ] Welcome Controller
-      - [ ] `GET #index`
+      - [x] `GET #index`
 - [ ] Functional Specs
   - [ ] Passing
   - [ ] Written
