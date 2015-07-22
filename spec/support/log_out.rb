@@ -1,4 +1,3 @@
 def log_out
-  request.env['warden'].stub(:authenticate!)
-    .and_throw(:warden, {:scope => :user})
+  log_in_as nil
 end

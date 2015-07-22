@@ -1,20 +1,26 @@
 class EndUserController < ApplicationController
   def new
-    @user   = User.new
-    @detail = EndUserDetail.new
-    render 'end_user_form'
+    # @user    = User.new
+    # @details = EndUserDetail.new
+    # render 'end_user_form'
   end
 
   def create
-    @detail = EndUserDetail.new detail_parameters
-    @user   = User.new user_parameters.merge(detail: @detail)
-    if @detail.valid? && @user.valid?
-      @detail.save
-      @user.save
-      redirect_to root_path
-    else
-      render 'end_user_form'
-    end
+    # @details = EndUserDetail.new detail_parameters
+    # @user    = User.new user_parameters.merge(details: @details)
+    # if @details.valid? && @user.valid?
+    #   @details.save
+    #   @user.save
+    #   redirect_to root_path
+    # else
+    #   render 'end_user_form'
+    # end
+  end
+
+  def update
+  end
+
+  def edit
   end
 
   private
@@ -30,7 +36,7 @@ class EndUserController < ApplicationController
   end
 
   def detail_parameters
-    @detail_parameters ||= params.require(:detail).permit(
+    @details_parameters ||= params.require(:detail).permit(
       :gender,
       :phone_number,
       :address,

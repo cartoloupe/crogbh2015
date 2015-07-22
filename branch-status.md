@@ -14,28 +14,54 @@ To-Do:
   - [x] `Category`
   - [x] `Service`
 - [ ] Controller Specs
-  - [ ] Passing
-  - [ ] Written
-    - [ ] End User Controller
-      - [ ] `GET #new`
-      - [ ] `POST #create`
-      - [ ] `GET #show`
-      - [ ] `GET #update`
-      - [ ] `POST #update`
-      - [ ] `GET #reset_password`
-    - [x] Service Controller
-      - [x] `GET #category`
-    - [x] Welcome Controller
-      - [x] `GET #index`
+  - [ ] Application Controller
+    - [ ] `.current_user`
+      - [x] Written
+      - [ ] Passing
+    - [ ] `.admin_user?`
+      - [x] Written
+      - [ ] Passing
+    - [ ] `.end_user?`
+      - [x] Written
+      - [ ] Passing
+  - [ ] End User Controller
+    - [ ] `GET #new`
+      - [x] Written
+      - [ ] Passing
+    - [ ] `POST #create`
+      - [x] Written
+      - [ ] Passing
+    - [ ] `GET #show`
+      - [x] Written
+      - [ ] Passing
+    - [ ] `GET #edit`
+      - [x] Written
+      - [ ] Passing
+    - [ ] `POST #update`
+      - [x] Written
+      - [ ] Passing
+  - [x] Service Controller
+    - [x] `GET #category`
+      - [x] Written
+      - [x] Passing
+  - [x] Welcome Controller
+    - [x] `GET #index`
+      - [x] Written
+      - [x] Passing
 - [ ] Functional Specs
-  - [ ] Passing
-  - [ ] Written
-    - [ ] End Users
-      - [ ] Sign Up
-      - [ ] Sign Up with errors
-      - [ ] Log In
-      - [ ] Edit Account
-      - [ ] Forgot Password
+  - [ ] End Users
+    - [ ] Sign Up
+      - [ ] Written
+      - [ ] Passing
+    - [ ] Sign Up with errors
+      - [ ] Written
+      - [ ] Passing
+    - [ ] Log In
+      - [ ] Written
+      - [ ] Passing
+    - [ ] Edit Account
+      - [ ] Written
+      - [ ] Passing
 - [x] Models
   - [x] `User`
   - [x] `AdminuserDetails`
