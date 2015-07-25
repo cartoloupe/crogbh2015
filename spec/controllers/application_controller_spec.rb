@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe ApplicationController do
+  # lets
+
+  let(:an_end_user)      { create :user }
+  let(:an_admin_user)    { create :user, :administrator }
+  let(:the_current_user) { }
+
   # subject
 
   subject { described_class.new }
@@ -8,7 +14,11 @@ describe ApplicationController do
   # before
 
   before :each do
-    log_in user
+    unless the_current_user.nil?
+      log_in_as the_current_user
+    else
+      log_out
+    end
   end
 
   # tests
@@ -17,12 +27,11 @@ describe ApplicationController do
     subject { super().current_user }
 
     context 'while logged in' do
-      let(:user) { create :user }
-      it { is_expected.to be user }
+      let(:the_current_user) { an_end_user}
+      it { is_expected.to be the_current_user }
     end
 
     context 'while not logged in' do
-      let(:user) { nil }
       it { is_expected.to be_nil }
     end
   end
@@ -31,17 +40,16 @@ describe ApplicationController do
     subject { super().admin_user? }
 
     context 'while logged in as an end user' do
-      let(:user) { create :user }
+      let(:the_current_user) { an_end_user }
       it { is_expected.to be false }
     end
 
     context 'while logged in as an admin user' do
-      let(:user) { create :user, :administrator }
+      let(:the_current_user) { an_admin_user }
       it { is_expected.to be true }
     end
 
     context 'while not logged in' do
-      let(:user) { nil }
       it { is_expected.to be false }
     end
   end
@@ -50,17 +58,16 @@ describe ApplicationController do
     subject { super().end_user? }
 
     context 'while logged in as an end user' do
-      let(:user) { create :user }
+      let(:the_current_user) { an_end_user }
       it { is_expected.to be true }
     end
 
     context 'while logged in as an admin user' do
-      let(:user) { create :user, :administrator }
+      let(:the_current_user) { an_admin_user }
       it { is_expected.to be false }
     end
 
     context 'while not logged in' do
-      let(:user) { nil }
       it { is_expected.to be false }
     end
   end

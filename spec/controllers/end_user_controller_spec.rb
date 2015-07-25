@@ -110,8 +110,7 @@ describe EndUserController do
     context 'with no parameters' do
       before :each do
         get :show
-        @user    = assigns :user
-        @details = assigns :details
+        @user = assigns :user
       end
 
       context 'while not logged in' do
