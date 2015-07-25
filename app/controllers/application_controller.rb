@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
     User.find_by id: session[:user_id]
   end
 
+  def admin_user?
+    !!(current_user && current_user.details.is_a?(AdminUserDetail))
+  end
+
+  def end_user?
+    !!(current_user && current_user.details.is_a?(EndUserDetail))
+  end
+
   private
   def allow_iframe
     response.headers.delete "X-Frame-Options"

@@ -9,7 +9,7 @@ describe ApplicationController do
 
   # subject
 
-  subject { described_class.new }
+  subject { controller }
 
   # before
 

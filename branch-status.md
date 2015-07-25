@@ -14,16 +14,16 @@ To-Do:
   - [x] `Category`
   - [x] `Service`
 - [ ] Controller Specs
-  - [ ] Application Controller
-    - [ ] `.current_user`
+  - [x] Application Controller
+    - [x] `.current_user`
       - [x] Written
-      - [ ] Passing
-    - [ ] `.admin_user?`
+      - [x] Passing
+    - [x] `.admin_user?`
       - [x] Written
-      - [ ] Passing
-    - [ ] `.end_user?`
+      - [x] Passing
+    - [x] `.end_user?`
       - [x] Written
-      - [ ] Passing
+      - [x] Passing
   - [ ] End User Controller
     - [ ] `GET #new`
       - [x] Written
