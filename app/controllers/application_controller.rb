@@ -5,17 +5,22 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def current_user
-    return nil unless session[:user_id].present?
-    User.find_by id: session[:user_id]
+  def must_be_logged_out
+    render_404 unless CurrentUser.none?
   end
 
-  def admin_user?
-    !!(current_user && current_user.details.is_a?(AdminUserDetail))
-  end
-
-  def end_user?
-    !!(current_user && current_user.details.is_a?(EndUserDetail))
+  def render_404
+    respond_to do |format|
+      format.html do
+        render(
+          file:   Rails.root.join('public', '404'),
+          layout: false,
+          status: :not_found
+        )
+      end
+      format.xml { head :not_found }
+      format.any { head :not_found }
+    end
   end
 
   private

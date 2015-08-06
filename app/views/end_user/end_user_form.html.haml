@@ -1,5 +1,4 @@
-%h2 Sign up
-%form.form-horizontal{action: new_end_user_path, method: :post}
+%form.form-horizontal{action: action, method: method}
   - @user.errors.full_messages.each do |message|
     .alert.alert-danger= message
   .form-group

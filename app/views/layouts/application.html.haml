@@ -15,4 +15,7 @@
     = csrf_meta_tags
     = favicon_link_tag('OneSource.ico')
   %body
-    = yield
+    .col-md-12
+      %h2= yield :title
+    .col-md-12
+      = yield

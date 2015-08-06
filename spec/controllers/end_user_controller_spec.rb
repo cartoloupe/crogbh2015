@@ -1,10 +1,5 @@
 require 'rails_helper'
 
-# *some* of these contexts omit the case for administrators this is because the
-# routes file should be redirecting to the admin controller
-#
-# each user type per function are or should be tested in the functional spec
-
 describe EndUserController do
   # helpers
 
@@ -22,11 +17,18 @@ describe EndUserController do
   let(:the_current_user)                { nil }
   let(:logged_in_user)                  { controller.current_user }
 
+  let(:an_end_user_details) do
+    create(
+      :end_user_detail,
+      **end_user_params[:details],
+    )
+  end
+
   let(:an_end_user) do
     create(
       :user,
       **end_user_params[:user],
-      details: end_user_params[:details],
+      details: an_end_user_details,
     )
   end
 
@@ -60,20 +62,10 @@ describe EndUserController do
     end
   end
 
-  shared_examples 'user profile redirection' do
-    it 'supplies the correct url' do
-      expect(response).to redirect_to user_url(@user)
-    end
-  end
-
   # befores
 
   before :each do
-    unless the_current_user.nil?
-      log_in_as the_current_user
-    else
-      log_out
-    end
+    log_in_as the_current_user
   end
 
   # tests
@@ -81,12 +73,11 @@ describe EndUserController do
   describe 'GET #new' do
     before :each do
       get :new
-      @user = assigns :user
     end
 
     context 'while logged in as an end user' do
       let(:the_current_user) { an_end_user }
-      it_behaves_like 'user profile redirection'
+      it_behaves_like 'end user account redirection'
     end
 
     context 'while logged in as an administrator' do
@@ -96,8 +87,9 @@ describe EndUserController do
 
     context 'while not logged in' do
       it 'assigns @user to a new User' do
-        expect(@user).to be_a(User).and be_new_record
-        expect(@user.details).to be_a(EndUserDetail).and be_new_record
+        user = assigns :user
+        expect(user).to be_a(User).and be_new_record
+        expect(user.details).to be_a(EndUserDetail).and be_new_record
       end
 
       it 'renders the signup template' do
@@ -110,7 +102,6 @@ describe EndUserController do
     context 'with no parameters' do
       before :each do
         get :show
-        @user = assigns :user
       end
 
       context 'while not logged in' do
@@ -126,7 +117,7 @@ describe EndUserController do
         let(:the_current_user) { an_end_user }
 
         it 'assigns @user to the appropriate user' do
-          expect(@user).to eq the_current_user
+          expect(assigns :user).to eq the_current_user
         end
 
         it 'shows the profile for the user' do
@@ -140,7 +131,6 @@ describe EndUserController do
     context 'with no parameters' do
       before :each do
         get :edit
-        @user = assigns :user
       end
 
       context 'while not logged in' do
@@ -156,7 +146,7 @@ describe EndUserController do
         let(:the_current_user) { an_end_user }
 
         it 'assigns @user to the logged in user' do
-          expect(@user).to eq current_user
+          expect(assigns :user).to eq the_current_user
         end
 
         it 'renders the edit template' do
@@ -171,7 +161,6 @@ describe EndUserController do
 
       before :each do
         get :edit, end_user_id: target_user_id
-        @user = assigns :user
       end
 
       context 'while logged in as an end user' do
@@ -188,7 +177,7 @@ describe EndUserController do
 
         context 'for a valid user' do
           it 'assigns @user to the proper end user' do
-            expect(@user).to eq target_user
+            expect(assigns :user).to eq target_user
           end
 
           it 'renders the edit template' do
@@ -210,10 +199,9 @@ describe EndUserController do
   end
 
   describe 'POST #create' do
-    before :each do
+    before :each do |example|
       unless example.metadata[:skip_before]
         post :create, **end_user_params
-        @user = assigns :user
       end
     end
 
@@ -230,12 +218,12 @@ describe EndUserController do
     context 'while not logged in' do
       context 'with valid data' do
         it 'creates a new User with the proper attributes', skip_before: true do
-          expect { post :create, **form_params }
-            .to change(User.count).by(1)
-            .and change(EndUserDetail.count).by(1)
+          expect { post :create, **end_user_params }
+            .to change { User.count }.by(1)
+            .and change { EndUserDetail.count }.by(1)
         end
 
-        it_behaves_like 'user profile redirection'
+        it_behaves_like 'end user account redirection'
       end
 
       context 'with invalid data' do
@@ -246,10 +234,10 @@ describe EndUserController do
         end
 
         it 'renders the new user form' do
-          expect(response).to render_template :edit
+          expect(response).to render_template :signup
         end
 
-        it_behaves_like 'the user was not updated'
+        it_behaves_like('the user was not updated', @user)
 
         xit 'does something meaningful with error messages'
       end
@@ -281,7 +269,7 @@ describe EndUserController do
 
         context 'with valid attributes' do
           it_behaves_like 'the user was updated'
-          it_behaves_like 'user profile redirection'
+          it_behaves_like 'end user account redirection'
           xit 'displays a flash message'
         end
 
@@ -338,7 +326,7 @@ describe EndUserController do
 
         context 'with valid attributes' do
           it_behaves_like 'the user was updated'
-          it_behaves_like 'user profile redirection'
+          it_behaves_like 'end user account redirection'
           xit 'it displays a flash message'
         end
 
