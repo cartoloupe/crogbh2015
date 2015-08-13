@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_filter :prepare_current_user
+
   after_filter :allow_iframe
 
   # Prevent CSRF attacks by raising an exception.
@@ -26,5 +28,9 @@ class ApplicationController < ActionController::Base
   private
   def allow_iframe
     response.headers.delete "X-Frame-Options"
+  end
+
+  def prepare_current_user
+    CurrentUser.session = session
   end
 end

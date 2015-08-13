@@ -6,6 +6,7 @@ describe EndUserController do
   def user_matches_params user, params
     expect(user).to match_hash params[:user]
     expect(user.details).to match_hash params[:details]
+    true
   end
 
   # lets
@@ -44,22 +45,6 @@ describe EndUserController do
       user:    attributes_for(:user),
       details: attributes_for(:end_user_detail),
     }
-  end
-
-  # shared examples
-
-  shared_examples 'the user was updated' do |user|
-    specify 'the model was updated' do
-      expect(user_matches_params(user, updated_end_user_params)) .to be_true
-      expect(user).to be_valid
-    end
-  end
-
-  shared_examples 'the user was not updated' do |user|
-    specify 'the model was not updated' do
-      expect(user_matches_params(user, end_user_params)).to be_true
-      expect(user).not_to be_valid
-    end
   end
 
   # befores
@@ -237,7 +222,15 @@ describe EndUserController do
           expect(response).to render_template :signup
         end
 
-        it_behaves_like('the user was not updated', @user)
+        it 'does not create a new User', skip_before: true do
+          expect { post :create, **end_user_params }
+          .not_to change { User.count }
+        end
+
+        it 'does not create a new EndUserDetail', skip_before: true do
+          expect { post :create, **end_user_params }
+          .not_to change { EndUserDetail.count }
+        end
 
         xit 'does something meaningful with error messages'
       end
@@ -248,7 +241,6 @@ describe EndUserController do
     context 'with no user id' do
       before :each do
         post :update, **updated_end_user_params
-        @user = assigns :user
       end
 
       context 'while not logged in' do
@@ -264,12 +256,18 @@ describe EndUserController do
         let(:the_current_user) { an_end_user }
 
         it 'assigns @user to the current user' do
-          expect(@user).to eq current_user
+          expect(assigns :user).to eq the_current_user
         end
 
         context 'with valid attributes' do
-          it_behaves_like 'the user was updated'
+          it 'updated the current user' do
+            user = assigns :user
+            expect(user_matches_params(user, updated_end_user_params)).to be true
+            expect(user).to be_valid
+          end
+
           it_behaves_like 'end user account redirection'
+
           xit 'displays a flash message'
         end
 
@@ -285,15 +283,13 @@ describe EndUserController do
           end
 
           it 'assigns @user to the user attributes' do
-            expect(@user).to eq current_user
-          end
-
-          it 'assigns @details to the details for the user' do
-            expect(@details).to eq current_user.details
+            expect(assigns :user).to eq the_current_user
           end
 
           it 'does not update the user' do
-            expect(@user.email).not_to eq form_params[:user][:email]
+            user = assigns :user
+            expect(user).to be_changed
+            expect(user).not_to be_valid
           end
 
           xit 'displays a flash error'
@@ -303,9 +299,7 @@ describe EndUserController do
 
     context 'with a user id' do
       before :each do
-        post :update, end_user_id: an_end_user.try(:id), **form_params
-        @user    = assigns :user
-        @details = assigns :details
+        post :update, end_user_id: an_end_user.try(:id), **updated_end_user_params
       end
 
       context 'while not logged in' do
@@ -321,22 +315,22 @@ describe EndUserController do
         let(:the_current_user) { an_admin_user }
 
         it 'assigns @user to the appropriate user' do
-          expect(@user).to eq current_user
+          expect(assigns :user).to eq an_end_user
         end
 
         context 'with valid attributes' do
-          it_behaves_like 'the user was updated'
-          it_behaves_like 'end user account redirection'
+          it { is_expected.to redirect_to end_user_url(an_end_user) }
+
+          xit 'updates the user'
           xit 'it displays a flash message'
         end
 
         context 'with invalid attributes' do
-          it_behaves_like 'the user was not updated'
-
           it 'displays the edit form' do
             expect(response).to render_template :edit
           end
 
+          xit 'does not update the user'
           xit 'displays a flash warning'
         end
       end

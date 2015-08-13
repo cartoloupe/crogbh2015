@@ -40,10 +40,42 @@ class EndUserController < ApplicationController
     if details.valid? && @user.valid?
       details.save
       @user.save
-      redirect_to account_url
+      redirect_to end_user_url
     else
       render 'signup'
     end
+  end
+
+  def update
+    case CurrentUser.type
+    when :end_user
+      return render_404 if params[:end_user_id]
+      @user = CurrentUser.record
+    when :admin
+      return render_404 unless params[:end_user_id]
+      @user = User.find_by id: params[:end_user_id]
+      return render_404 unless @user
+    else
+      return render_404
+    end
+
+    detail_parameters.each do |key, value|
+      @user.details.send("#{key}=", value)
+    end
+
+    if @user.details.valid?
+      user_parameters.each do |key, value|
+        @user.send("#{key}=", value)
+      end
+
+      if @user.valid?
+        @user.details.save
+        @user.save
+        return redirect_to end_user_url(@user)
+      end
+    end
+
+    render 'edit'
   end
 
   private

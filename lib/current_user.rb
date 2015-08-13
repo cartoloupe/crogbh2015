@@ -1,5 +1,7 @@
 module CurrentUser
   class << self
+    attr_accessor :session
+
     def record
       return nil unless session[:user_id].present?
       User.find_by id: session[:user_id]
@@ -10,7 +12,7 @@ module CurrentUser
     end
 
     def log_in user
-      session[:user_id] = user.id
+      self.session[:user_id] = user.id
     end
 
     def log_out
