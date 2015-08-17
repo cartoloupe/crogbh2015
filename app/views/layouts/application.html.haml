@@ -8,14 +8,16 @@
     %title
     %meta{:content => "", :name => "description"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    -# %link{rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Rokkitt:400,700'}
 
-    %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDlclED-Bjpp1k2RtYeVBv2zcoMOlbVTVs", :type => "text/javascript"}
+    -# %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDlclED-Bjpp1k2RtYeVBv2zcoMOlbVTVs", :type => "text/javascript"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = favicon_link_tag('OneSource.ico')
 
-  %body
+  %body.color-normal
     = render 'header'
     = render 'flash'
     = yield
+    = render 'footer'

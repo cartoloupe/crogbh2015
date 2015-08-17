@@ -1,0 +1,19 @@
+$accent-color:           #4dabdb;
+$accent-highlight-color: #7cc1e4;
+$bg-color:               #5b5b5b;
+$fg-color:               #fff;
+
+.color-normal {
+  background: $bg-color;
+  color:      $fg-color;
+}
+
+.color-accented {
+  background: $accent-color;
+  color:      $fg-color;
+}
+
+.color-inverted {
+  background: $fg-color;
+  color:      $bg-color;
+}

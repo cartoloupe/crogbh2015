@@ -1,0 +1,16 @@
+@import 'colors';
+
+.footer {
+  a {
+    color: $fg-color;
+
+    &:hover {
+      color: $accent-highlight-color;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+

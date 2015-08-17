@@ -1,2 +1,6 @@
 - flash.each do |key, value|
-  .alert{class: "alert-#{key}"}= value
+  - alert_key = case key
+    - when 'notice' then 'info'
+    - when 'alert'  then 'danger'
+    - else key
+  .alert{class: "alert-#{alert_key}"}= value

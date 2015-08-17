@@ -1,22 +1,24 @@
-%h1= humanize @category
-- Services[@category].each do |service|
-  .box
-    %b= service[:title]
-    %p= raw service[:description]
-    - if service[:website].present?
-      %a{href: service[:website]}
-        %span.btn.btn-lg.glyphicon.glyphicon-share-alt
-        = service[:website]
-    - service[:phone].each do |phone|
-      %p
-        = render 'phoneno'
-        = phone
-    - if service[:email].present?
-      %p= service[:email]
-    - service[:mailing_address].each do |mailing_address|
-      - mailing_address.lines.each do |address_line|
-        %div= address_line
-    - service[:physical_address].each do |physical_address|
-      - physical_address.lines.each do |address_line|
-        %div= address_line
-      = display_map physical_address
+.container.service-listing
+  - Services[@category].each do |service|
+    .row.service.collapsable
+      .col-md-12
+        %header
+          .title= service[:title]
+        .content.color-inverted
+          .description= raw service[:description]
+          - if service[:website].present?
+            %a.website
+              %span.glyphicon.glyphicon-share-alt
+              = service[:website]
+          - service[:phone].each do |phone|
+            %p
+              %span.glyphicon.glyphicon-earphone
+              = phone
+          - if service[:email].present?
+            %p= service[:email]
+          - service[:mailing_address].each do |mailing_address|
+            %div= raw newline_to_br mailing_address
+          - service[:physical_address].each do |physical_address|
+            %span.glyphicon.glyphicon-map-marker
+            %div= raw newline_to_br physical_address
+            = display_map physical_address

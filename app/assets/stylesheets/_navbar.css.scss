@@ -1,0 +1,57 @@
+@import 'colors';
+
+.navbar-default {
+  background: transparent;
+  border:     none;
+  color:      $fg-color;
+
+  .navbar-brand {
+    color: $fg-color;
+
+    img {
+      display: inline-block;
+      height:  20pt;
+    }
+  }
+
+  .navbar-nav {
+    li {
+      a {
+        color: $fg-color;
+      }
+    }
+
+    .dropdown {
+      & > a {
+        background: $accent-color;
+        color:      $fg-color;
+      }
+
+      &:hover {
+        & > a {
+          background: $accent-highlight-color;
+          color:      $fg-color;
+        }
+      }
+
+      &.open {
+        & > a {
+          background: $accent-highlight-color;
+          color:      $fg-color;
+        }
+      }
+
+      .dropdown-menu {
+        background: $accent-color;
+
+        & > li {
+          & > a {
+            &:hover {
+              background: $accent-highlight-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

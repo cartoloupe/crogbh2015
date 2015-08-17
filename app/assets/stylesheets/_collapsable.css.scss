@@ -1,0 +1,26 @@
+@import 'colors';
+
+.collapsable {
+  header {
+    background: $accent-color;
+    cursor:     hand;
+  }
+
+  &.collapsed {
+    .content {
+      display: none;
+    }
+  }
+
+  &:not(.collapsed) {
+    header {
+      background: $accent-highlight-color;
+    }
+  }
+}
+
+.collapsed {
+  .content {
+    display: none;
+  }
+}
