@@ -2,39 +2,35 @@
 community resources online give back hack 2015
 
 ## Tutorials
-
 [Quick YAML Guide](guides/yaml.md)
 [Quick Markdown Guide](guides/markdown.md)
-
-## next steps
-[some requirements from notes](REQUIREMENTS.md)
-
-### phase I
-- [ ] finish content
-- [x] embed maps
-- [ ] add search
-- [ ] implement design
-- [ ] tags on the page
-- [x] icons
-  - [bootstrap components](http://getbootstrap.com/components/)
-- [ ] sort by relevance
-- [ ] convert criteria to checklist
-- [x] [slack channel](https://onesourcecommunity.slack.com/messages/general/)
-
-### phase II
-- [ ] accounts and user login
-- [ ] better hosting
-- [ ] lifeline preload
-
-### phase III
-- [ ] detect coordinates
-- [ ] content management system
-
-### phase IIII
-- [ ] look into analytics
-- [ ] reviews
-
 
 ## links to relevant organizations
 - [besa](http://www.givebesa.org/)
 - [starhouse](http://www.osustarhouse.com/About/Mission-and-Vision.aspx)
+
+# Time Line For January 1st, 2016
+
+### complete
+- [x] embed maps
+- [x] icons
+  - [bootstrap components](http://getbootstrap.com/components/)
+- [x] [slack channel](https://onesourcecommunity.slack.com/messages/general/)
+- [x] finish putting up some content
+
+### by September 1
+- [ ] implement ui issues
+
+### by November 1
+- [ ] add search
+- [ ] accounts and user login / content management system
+
+### by December 1
+- [ ] analytics
+
+### by January 1
+
+### future
+- [ ] reviews
+- [ ] better hosting
+- [ ] lifeline preload
