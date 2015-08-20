@@ -1,7 +1,15 @@
 $accent-color:           #4dabdb;
 $accent-highlight-color: #7cc1e4;
+$bad-color:              #ff7851;
+$bad-highlight-color:    #ff9678;
 $bg-color:               #5b5b5b;
+$bg-highlight-color:     lighten($bg-color, 10%);
+$dark-text-color:        #111111;
+$ehh-color:              #ffc62c;
+$ehh-highlight-color:    #ffe7a8;
 $fg-color:               #fff;
+$good-color:             #00c85d;
+$good-highlight-color:   #6feca9;
 
 .color-normal {
   background: $bg-color;

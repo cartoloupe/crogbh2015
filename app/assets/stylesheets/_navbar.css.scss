@@ -1,16 +1,31 @@
 @import 'colors';
 
 .navbar-default {
-  background: transparent;
+  background: $fg-color;
   border:     none;
-  color:      $fg-color;
+  color:      $dark-text-color;
 
   .navbar-brand {
-    color: $fg-color;
+    background: $bg-color;
+    color:      $fg-color;
 
     img {
       display: inline-block;
       height:  20pt;
+    }
+  }
+
+  form {
+    position: relative;
+
+    .form-group {
+      #search {
+        position: absolute;
+        left:     0;
+        right:    0;
+        top:      0;
+        bottom:   0;
+      }
     }
   }
 

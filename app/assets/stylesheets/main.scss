@@ -1,7 +1,16 @@
 @import 'colors';
 
+// not sure why these have to be imported and the others don't
+// maybe they are conflicting with names from bootstrap? that
+// hardly seems to make sense to me at the time of writing though
 @import 'jumbotron';
 @import 'navbar';
+
+// this file is just a place for uncategorized styles
+
+h1 {
+  text-align: center;
+}
 
 .map {
   height: 400px;
@@ -10,4 +19,6 @@
 
 body {
   font-family: 'Rokkitt', serif;
+  font-size:   14pt;
+  padding-top: 70px;
 }

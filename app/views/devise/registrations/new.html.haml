@@ -1,0 +1,28 @@
+- content_for :title, 'Sign Up'
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .form-container
+      .row
+        .col-md-12
+          = devise_error_messages!
+      .row
+        .col-md-6
+          .form-group
+            = f.label :email, class: 'form-control'
+            %em You must have a valid email address to register
+            = f.email_field :email, autofocus: true, class: 'form-control'
+        .col-md-6
+          .form-group
+            = f.label :password, class: 'form-control'
+            %em (#{@minimum_password_length} characters minimum)
+            = f.password_field :password, autocomplete: 'off', class: 'form-control'
+          .form-group
+            = f.label :password_confirmation, class: 'form-control'
+            = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+        .row
+          .col-md-12
+            .form-group.actions
+              = f.submit 'Sign up', class: %w{btn btn-primary form-control}
+    .row
+      .col-md-12.preheader
+        = render 'devise/shared/links'

@@ -2,19 +2,12 @@
 
 .collapsable {
   header {
-    background: $accent-color;
-    cursor:     hand;
+    cursor: pointer;
   }
 
   &.collapsed {
     .content {
       display: none;
-    }
-  }
-
-  &:not(.collapsed) {
-    header {
-      background: $accent-highlight-color;
     }
   }
 }

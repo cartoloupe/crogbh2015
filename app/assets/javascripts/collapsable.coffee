@@ -1,3 +1,6 @@
+# unused at the moment -- causing issues with maps
+# was used in app/views/servies/categories.html.haml
+
 $ ->
   collapsables = $('.collapsable')
   collapsables.each (index, element) ->

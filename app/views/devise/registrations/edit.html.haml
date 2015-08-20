@@ -1,0 +1,46 @@
+- content_for :title, "Edit #{resource_name.to_s.humanize}"
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    .form-container
+      .row
+        .col-md-12
+          = devise_error_messages!
+      .row
+        .col-md-12
+          .form-group
+            = f.label :email, class: 'form-control'
+            = f.email_field :email, autofocus: true, class: 'form-control'
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              %div
+                Currently waiting confirmation for:
+                = resource.unconfirmed_email
+      .row
+        .col-md-6
+          .form-group
+            = f.label :password, class: 'form-control'
+            %em Leave blank to leave unchanged
+            = f.password_field :password, autocomplete: 'off', class: 'form-control'
+        .col-md-6
+          .form-group
+            = f.label :password_confirmation, class: 'form-control'
+            %em Must match
+            = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control'
+      .row
+        .col-md-6
+          .form-group
+            = f.label :current_password, class: 'form-control'
+            %em Enter your password to save these changes
+            = f.password_field :current_password, autocomplete: 'off', class: 'form-control'
+      .row
+        .col-md-12
+          .actions
+            = f.submit 'Update', class: %w{btn btn-success form-control}
+      .row
+        .col-md-12
+          %strong Cancel my account
+          %p
+            Unhappy?
+            = button_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete, class: %w{btn btn-danger form-control}
+    .row
+      .col-md-12
+        = link_to 'Back', :back

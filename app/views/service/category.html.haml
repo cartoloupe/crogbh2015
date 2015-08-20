@@ -1,6 +1,14 @@
+- content_for :title, humanize(@category)
 .container.service-listing
   - Services[@category].each do |service|
-    .row.service.collapsable
+    -# the original markup is interfering with maps
+    -#
+    -# if fixed, please update the comments in
+    -#   app/assets/javascripts/collapsable.coffee
+    -#
+    -# original code:
+    -#   .row.service.collapsable
+    .row.service
       .col-md-12
         %header
           .title= service[:title]

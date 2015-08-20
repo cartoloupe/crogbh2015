@@ -3,6 +3,8 @@
 .service-listing {
   .service {
     header {
+      background: $accent-color;
+
       .title {
         font-size:   20pt;
         font-weight: bold;
@@ -12,12 +14,22 @@
     }
 
     .content {
+      padding: 10pt;
+
       .description {
 
       }
 
       .website {
 
+      }
+    }
+  }
+
+  .collapsable {
+    &:not(.collapsed) {
+      header {
+        background: $accent-highlight-color;
       }
     }
   }

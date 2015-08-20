@@ -65,4 +65,44 @@ describe ApplicationHelper do
       expect(subject).to include 'codeAddress('
     end
   end
+
+  describe '#header_title_for' do
+    let(:site_title) { 'OneSource' }
+
+    subject { super().header_title_for input }
+
+    context 'with non-empty input' do
+      let(:input) { 'Test' }
+
+      it 'returns a string in the format "<title> - <site title>"' do
+        expect(subject).to eq "#{input} - #{site_title}"
+      end
+    end
+
+    context 'with nil input' do
+      let(:input) { }
+
+      it 'returns just the site title' do
+        expect(subject).to eq site_title
+      end
+    end
+
+    context 'with empty input' do
+      let(:input) { '' }
+
+      it 'returns just the site title' do
+        expect(subject).to eq site_title
+      end
+    end
+  end
+
+  describe '#page_title_for' do
+    let(:input) { Array.new(rand 5..10) { ('a'..'z').to_a.sample }.join }
+
+    subject { super().page_title_for input }
+
+    it 'returns the input' do
+      expect(subject).to eq input
+    end
+  end
 end
