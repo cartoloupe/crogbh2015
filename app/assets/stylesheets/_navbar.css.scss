@@ -1,0 +1,72 @@
+@import 'colors';
+
+.navbar-default {
+  background: $fg-color;
+  border:     none;
+  color:      $dark-text-color;
+
+  .navbar-brand {
+    background: $bg-color;
+    color:      $fg-color;
+
+    img {
+      display: inline-block;
+      height:  20pt;
+    }
+  }
+
+  form {
+    position: relative;
+
+    .form-group {
+      #search {
+        position: absolute;
+        left:     0;
+        right:    0;
+        top:      0;
+        bottom:   0;
+      }
+    }
+  }
+
+  .navbar-nav {
+    li {
+      a {
+        color: $fg-color;
+      }
+    }
+
+    .dropdown {
+      & > a {
+        background: $accent-color;
+        color:      $fg-color;
+      }
+
+      &:hover {
+        & > a {
+          background: $accent-highlight-color;
+          color:      $fg-color;
+        }
+      }
+
+      &.open {
+        & > a {
+          background: $accent-highlight-color;
+          color:      $fg-color;
+        }
+      }
+
+      .dropdown-menu {
+        background: $accent-color;
+
+        & > li {
+          & > a {
+            &:hover {
+              background: $accent-highlight-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

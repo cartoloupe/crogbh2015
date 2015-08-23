@@ -1,15 +1,15 @@
-.whole
-  .top
-    .titleholder
-      = image_tag('OneSource.png', class: "logo")
-      %h1 OneSource
-  // %a.btn.btn-default{href: category_path('pregnancy')} Pregnancy
-  // %a.btn.btn-default{href: category_path('employment')} Employment
-  // %br
-  // - @all_the_sections.map do |button_text|
-  //   %a.btn.btn-default{href: category_path('veterans')} Veterans
-  // %br
-  - Services.categories.each do |category|
-    %a.btn.btn-default.btn-lg{href: category_path(category)}= humanize category
+.jumbotron
+  %h1 OneSource
+  %p
+    In ut accumsan est, in volutpat nibh. Duis a nulla semper, dictum eros non,
+    commodo magna. In et dignissim elit. Etiam dictum semper ligula, consectetur
+    vehicula lorem dictum aliquam. Quisque tincidunt sollicitudin urna at
+    ultrices. Mauris porta convallis nisl, ac pharetra risus pretium vitae.
+    Nullam consectetur purus quis erat dictum, sed pulvinar lectus condimentum.
+    Vivamus non nibh rhoncus, vestibulum tortor eget, molestie nibh.
 
-  = button_to 'demo', {controller: 'pitch', method: :get}, {method: :get, class: 'btn-default btn-lg btn demo'}
+.container.welcome
+  .row.categories
+    - Services.categories.each do |category|
+      .col-md-3.col-sm-6.col-xs-12.category
+        %a{href: category_path(category)}= humanize category

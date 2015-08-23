@@ -1,0 +1,20 @@
+@import 'colors';
+
+.footer {
+  border-top:  1px solid rgba($fg-color, 0.381966);
+  margin-top:  20pt;
+  padding-top: 20pt;
+
+  a {
+    color: $fg-color;
+
+    &:hover {
+      color: $accent-highlight-color;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+

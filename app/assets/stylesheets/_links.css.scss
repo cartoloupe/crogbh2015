@@ -1,0 +1,17 @@
+@import 'colors';
+
+a {
+  color:           $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    color:           $accent-highlight-color;
+    text-decoration: none;
+  }
+}
+
+.color-accented {
+  a {
+    color: $fg-color;
+  }
+}

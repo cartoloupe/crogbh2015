@@ -1,0 +1,65 @@
+@import 'colors';
+
+.form-container {
+  background: $accent-color;
+  padding:    10pt;
+
+  .form-group {
+    .form-control {
+      background:    rgba($fg-color, 0.618034);
+      border-radius: 0;
+      border:        none;
+      color:         $dark-text-color;
+
+      &.btn {
+        &.btn-default {
+          background: $fg-color;
+          color:      $dark-text-color;
+
+          &:active {
+            background: darken($fg-color, 10%)
+          }
+        }
+
+        &.btn-primary {
+          background: $bg-color;
+          color:      $fg-color;
+
+          &:active {
+            background: $bg-highlight-color;
+          }
+        }
+
+        &.btn-success {
+          background: $good-color;
+
+          &:active {
+            background: $good-highlight-color;
+          }
+        }
+
+        &.btn-danger {
+          background: $bad-color;
+
+          &:active {
+            background: $bad-highlight-color;
+          }
+        }
+
+        &.btn-warning {
+          background: $ehh-color;
+
+          &:active {
+            background: $ehh-highlight-color;
+          }
+        }
+      }
+    }
+
+    // There is supposedly a way to nest this above, but I couldn't get it to work
+    label.form-control {
+      background: transparent;
+      color:      $fg-color;
+    }
+  }
+}

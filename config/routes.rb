@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'employment/index'
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  get 'mockup', to: 'pitch#index'
+  get 'mockup', to: 'pitch#index', as: :pitch
   get ':category', to: 'service#category', as: :category
 
   # The priority is based upon order of creation: first created -> highest priority.

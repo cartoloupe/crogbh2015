@@ -1,0 +1,36 @@
+@import 'colors';
+
+.service-listing {
+  .service {
+    header {
+      background: $accent-color;
+
+      .title {
+        font-size:   20pt;
+        font-weight: bold;
+        height:      24pt;
+        padding:     0 20pt;
+      }
+    }
+
+    .content {
+      padding: 10pt;
+
+      .description {
+
+      }
+
+      .website {
+
+      }
+    }
+  }
+
+  .collapsable {
+    &:not(.collapsed) {
+      header {
+        background: $accent-highlight-color;
+      }
+    }
+  }
+}

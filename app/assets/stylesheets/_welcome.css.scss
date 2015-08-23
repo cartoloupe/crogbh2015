@@ -1,0 +1,30 @@
+@import 'colors';
+
+$category-button-height: 200px;
+
+.welcome {
+  .categories {
+    .category {
+      padding:     0;
+      text-align:  center;
+
+      a {
+        background:     $accent-color;
+        color:          $fg-color;
+        display:        block;
+        font-size:      20pt;
+        height:         $category-button-height;
+        line-height:    $category-button-height;
+        margin:         0;
+        padding:        20pt;
+        width:          100%;
+        vertical-align: middle;
+
+        &:hover {
+          background:      $accent-highlight-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
