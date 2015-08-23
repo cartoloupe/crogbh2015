@@ -95,14 +95,4 @@ describe ApplicationHelper do
       end
     end
   end
-
-  describe '#page_title_for' do
-    let(:input) { Array.new(rand 5..10) { ('a'..'z').to_a.sample }.join }
-
-    subject { super().page_title_for input }
-
-    it 'returns the input' do
-      expect(subject).to eq input
-    end
-  end
 end

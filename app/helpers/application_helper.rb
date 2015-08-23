@@ -35,14 +35,6 @@ HEREDOC
     end
   end
 
-  # this is kind of a silly method to have.. i originally wrote it thinking
-  # that we might need to wrap the input somehow but i am having a hard time
-  # coming up with the reason we would need this. in fact i will probably remove
-  # this method before i create a pull request
-  def page_title_for input
-    input
-  end
-
   private
 
   SITE_TITLE = 'OneSource'.freeze
