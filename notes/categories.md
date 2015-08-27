@@ -1,20 +1,21 @@
-### categories and icons
-*baby and child
-- baby
-- crib
+# Categories and Icons
 
-*food
-- plate
-- fork
+## Baby and Child
+- [ ] Baby
+- [ ] Crib
 
-*veterans
-- something
+## Food
+- [ ] Plate
+- [ ] Fork
 
-*pregnancy
-- crib
+## Veterans
+- [ ] *something*
 
-*free clinics
-- health sign
+## Pregnancy
+- [ ] Crib
+
+## Free Clinics
+- [ ] health sign
 
 .
 .
