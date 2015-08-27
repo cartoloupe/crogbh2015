@@ -1,6 +1,8 @@
 # crogbh2015
 community resources online give back hack 2015
 
+[categories and icons needed](notes/categories.md)
+
 ## Tutorials
 [Quick YAML Guide](guides/yaml.md)
 [Quick Markdown Guide](guides/markdown.md)
