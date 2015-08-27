@@ -1,7 +1,7 @@
 # Categories and Icons
 
 ## Baby and Child
-- [ ] Baby
+- [X] Baby
 - [ ] Crib
 
 ## Food
