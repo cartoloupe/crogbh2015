@@ -8,10 +8,10 @@
 - [ ] Plate
 - [ ] Fork
 
-## Veterans
+## ~~Veterans~~
 - [ ] *something*
 
-## Pregnancy
+## ~~Pregnancy~~ Baby and Child
 - [ ] Crib
 - [ ] Baby
 
