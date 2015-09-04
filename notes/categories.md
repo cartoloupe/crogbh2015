@@ -4,7 +4,7 @@
 - [ ] Baby
 - [ ] Crib
 
-## Food
+## Food and Nutrition
 - [ ] Plate
 - [ ] Fork
 
@@ -17,6 +17,22 @@
 
 ## Free Clinics
 - [ ] health sign
+
+## Clothing and Personal Care
+
+## Education
+
+## Job and Career
+
+## Legal and Finance
+
+## Mental and Physical Health
+
+## Technology Programs
+
+## Transportation
+
+## Youth Programs
 
 .
 .
