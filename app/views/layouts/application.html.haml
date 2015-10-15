@@ -1,4 +1,4 @@
-!!!
+!!! 5
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -18,5 +18,6 @@
     = render 'navbar'
     = render 'header'
     = render 'flash'
-    = yield
+    .container
+      = yield
     = render 'footer'

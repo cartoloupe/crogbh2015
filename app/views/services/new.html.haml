@@ -1,0 +1,17 @@
+- content_for :title, 'Add a Service'
+.col-md-12
+  %form{action: new_service_url, method: 'post'}
+    .form-group
+      %label{for: 'name'} Name
+      %input.form-control{type: 'text', name: 'name'}
+    .form-group
+      %label{for: 'category'} Category
+      %select.form-control{name: 'category'}
+        - Category.all.each do |category|
+          %option{value: category.id} category.name
+    .form-group
+      %label{for: 'description'} Description
+      %textarea.form-control{name: 'description'}
+    .form-group
+      %label{for: 'website'} Web Site
+      %input.form-control{name: 'website'}
