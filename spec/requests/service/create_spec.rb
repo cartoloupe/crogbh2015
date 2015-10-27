@@ -14,12 +14,6 @@ describe 'Service creation', type: :request do
     }
   end
 
-  # Shared Groups
-
-  shared_examples_for 'an invalid service' do
-    it { is_expected.to render_template :new }
-  end
-
   # Before
 
   before :each do
@@ -32,13 +26,8 @@ describe 'Service creation', type: :request do
     it { is_expected.to redirect_to service }
   end
 
-  context 'without a name' do
+  context 'with invalid parameters' do
     let(:name) { '' }
-    it_behaves_like 'an invalid service'
-  end
-
-  context 'without a description' do
-    let(:description) { '' }
-    it_behaves_like 'an invalid service'
+    it { is_expected.to render_template :new }
   end
 end
