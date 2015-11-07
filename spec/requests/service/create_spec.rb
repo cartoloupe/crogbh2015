@@ -9,8 +9,10 @@ describe 'Service creation', type: :request do
 
   let(:params) do
     {
-      description: description,
-      name:        name,
+      service: {
+        description: description,
+        name:        name,
+      },
     }
   end
 

@@ -1,16 +1,13 @@
 class ServicesController < ApplicationController
-  def category
-    # this should be the index action on the categories controller
-    raise ActionController::RoutingError.new('Not Found') if params['category'].nil?
-    @category      = params['category'].to_sym
-    @category_name = params['category']
-                     .split('-')
-                     .map(&:capitalize)
-                     .join(' ')
-    render 'category'
+  def index
+  end
+
+  def show
+    @service = Service.find params[:id]
   end
 
   def new
+    @service = Service.new
   end
 
   def create
@@ -22,9 +19,22 @@ class ServicesController < ApplicationController
     end
   end
 
+  def edit
+    @service = Service.find params[:id]
+  end
+
+  def update
+    @service = Service.find params[:id]
+    if @service.update(service_params)
+      redirect_to @service
+    else
+      render :edit
+    end
+  end
+
   private
 
   def service_params
-    params.permit :name, :description, :website
+    params.require(:service).permit :name, :description, :website
   end
 end
