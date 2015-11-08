@@ -1,5 +1,11 @@
 class WelcomeController < ApplicationController
   def index
+    @categories = Category.all
+
+
+    # keep this around as a list for now
+    # should be moved to:
+    # https://github.com/cartoloupe/crogbh2015/blob/master/notes/categories.md
     @all_the_sections = [
       @other_section = [
         'holiday assistance',
