@@ -1,0 +1,9 @@
+- content_for :title, 'All Services'
+.col-md-12
+  - Service.all.each do |service|
+    .row
+      %h2= service.name
+      %p= service.description
+      - if service.website
+        %div
+          %a{href: service.website} Website

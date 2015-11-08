@@ -1,0 +1,10 @@
+- content_for :title, 'Add a Category'
+.col-md-12
+  - @category.errors.each do |error|
+    %div.alert.alert-danger= error
+  %form{action: new_category_url, method: 'post'}
+    .form-group
+      %label{for: 'name'} Name
+      %input.form-control{name: 'name', type: 'text'}
+    .form-group
+      %button.btn.btn-primary Create

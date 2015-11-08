@@ -1,0 +1,3 @@
+- content_for :title, 'Add a Service'
+.col-md-12
+  = render partial: 'form', locals: { action: services_url, method: :POST }

@@ -1,0 +1,17 @@
+- if @service.errors.any?
+  %div.alert.alert-danger
+    %ul
+      - @service.errors.full_messages.each do |message|
+        %li= message
+= form_for @service, url: action, method: method do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: 'form-control'
+  .form-group
+    = f.label :website
+    = f.text_field :website, class: 'form-control'
+  .form-group
+    = f.submit class: %[form-control btn btn-primary]

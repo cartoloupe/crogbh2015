@@ -1,0 +1,7 @@
+- content_for :title, @service.name
+.col-md-12
+  %h2= @service.name
+  %p= @service.description
+  - if @service.website
+    %div
+      %a{href: @service.website} Website
