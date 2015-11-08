@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do
+  category = FactoryGirl.create :category
+  rand(0..4).times do
+    category.services << FactoryGirl.create(:service)
+  end
+  category.save!
+end
