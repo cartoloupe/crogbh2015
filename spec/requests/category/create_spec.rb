@@ -8,7 +8,9 @@ describe 'Category creation', type: :request do
 
   let(:params) do
     {
-      name: name
+      category: {
+        name: name
+      }
     }
   end
 

@@ -1,0 +1,3 @@
+- content_for :title, 'Edit Category'
+.col-md-12
+  = render partial: 'form', locals: { action: category_url(@category), method: 'put'}

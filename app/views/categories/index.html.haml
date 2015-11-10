@@ -1,0 +1,5 @@
+- content_for :title, 'All Categories'
+.col-md-12
+  - Category.all.each do |category|
+    .row
+      %p= category.name
