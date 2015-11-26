@@ -3,4 +3,5 @@ class Service < ActiveRecord::Base
   validates :name,        presence: true
 
   has_and_belongs_to_many :categories
+  has_many :locations
 end

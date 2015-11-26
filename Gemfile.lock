@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    StreetAddress (1.0.6)
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
       actionview (= 4.2.0)
@@ -195,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  StreetAddress
   autoprefixer-rails
   bootstrap-sass
   byebug
