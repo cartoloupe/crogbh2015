@@ -1,0 +1,11 @@
+- content_for :title, @category.name
+.col-md-12
+  - @services.each do |service|
+    .row
+      .col-md-4
+        %p= service.name
+      .col-md-4
+        %p= service.description
+      .col-md-4
+        %p= service.website
+

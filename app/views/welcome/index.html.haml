@@ -10,6 +10,6 @@
 
 .container.welcome
   .row.categories
-    - Services.categories.each do |category|
+    - @categories.each do |category|
       .col-md-3.col-sm-6.col-xs-12.category
-        %a{href: category_path(category)}= humanize category
+        %a{href: category_path(category)}= category.name
