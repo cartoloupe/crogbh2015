@@ -12,6 +12,7 @@ codeAddress = (address, mapdivid) ->
         center: results[0].geometry.location
         mapTypeId: google.maps.MapTypeId.ROADMAP
       map = new (google.maps.Map)(document.getElementById(mapdivid), myOptions)
+      window.map = map
       marker = new (google.maps.Marker)(
         map: map
         position: results[0].geometry.location)
@@ -31,6 +32,8 @@ showPosition = (position) ->
 
 #The callback function executed when the location is fetched successfully.
 onGeoSuccess = (location) ->
+  window.loc = location
+  window.map = location.map.map # the google map
   console.log location
   return
 
@@ -46,12 +49,20 @@ window.onload = ->
     timeout: 6000
     maximumAge: 0
   geolocator.locate onGeoSuccess, onGeoError, true, html5Options, 'map-canvas'
+    # new (google.maps.Map)(document.getElementById('#map-canvas'))
   return
 
+addMarker = (lat,long) ->
+  marker = new (google.maps.Marker)(
+    position: {lat: lat, lng: long}
+    map: window.map
+    title: 'Hello World!')
 
-
+window['addMarker'] = addMarker
 window['codeAddress'] = codeAddress
 window['getLocation'] = getLocation
 window['showPosition'] = showPosition
+window['onGeoSuccess'] = onGeoSuccess
+window['onGeoError'] = onGeoError
 
 console.log('what')
