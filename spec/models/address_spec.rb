@@ -6,11 +6,11 @@ describe Address, type: :model do
 
     let(:street_qualifier)     { 'St.' }
     let(:street_separator)     { ' ' }
-    let(:street_name)          { 'Main St.' }
+    let(:street_name)          { 'Main' }
     let(:street_number)        { rand(100..99999).to_s }
 
-    let(:unit_label)           { 'Suite' }
-    let(:unit)                 { rand(1..99999).to_s }
+    let(:unit_label)           { }
+    let(:unit)                 { }
 
     let(:city)                 { 'Columbus' }
     let(:city_state_separator) { ', ' }
@@ -27,16 +27,14 @@ describe Address, type: :model do
 
     let(:address_separator) { ",\n" }
     let(:input) do
-      randomize_case(
-        [
-          street_address,
-          unit_info,
-          city_state,
-          zip,
-        ]
-        .select { |part| part.present? }
-        .join address_separator
-      )
+      [
+        street_address,
+        unit_info,
+        city_state,
+        zip,
+      ]
+      .select { |part| part.present? }
+      .join address_separator
     end
 
     let(:expected_street_qualifier) do
@@ -63,7 +61,7 @@ describe Address, type: :model do
     end
 
     let(:expected_street) do
-      "#{street_number} #{street_name} #{expected_street_qualifier}"
+      "#{street_number} #{street_name} #{expected_street_qualifier}".gsub(/\s\s+/, '')
     end
 
     # Subject
@@ -91,8 +89,8 @@ describe Address, type: :model do
     end
 
     context 'with a unit' do
-      let(:unit)       { 123 }
       let(:unit_label) { 'Suite' }
+      let(:unit)       { rand(1..99999).to_s }
 
       its(:unit) { is_expected.to eq unit }
       its(:unit_label) { is_expected.to eq unit_label }
@@ -144,12 +142,12 @@ describe Address, type: :model do
     end
 
     context 'with a zip code' do
-      let(:zip_code) { rand 10000..99999 }
+      let(:zip_code) { rand(10000..99999).to_s }
 
       its(:zip) { is_expected.to eq zip_code }
 
       context 'with an extension' do
-        let(:zip_extension) { rand 1000..9999 }
+        let(:zip_extension) { rand(1000..9999).to_s }
 
         context 'and no separator'  do
           let(:zip_separator) { '' }
@@ -158,11 +156,6 @@ describe Address, type: :model do
 
         context 'and a hyphen separator'  do
           let(:zip_separator) { '-' }
-          its(:zip) { is_expected.to eq "#{zip_code}-#{zip_extension}" }
-        end
-
-        context 'and a space separator'  do
-          let(:zip_separator) { ' ' }
           its(:zip) { is_expected.to eq "#{zip_code}-#{zip_extension}" }
         end
       end
