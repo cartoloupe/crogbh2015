@@ -36,3 +36,10 @@ community resources online give back hack 2015
 - [ ] reviews
 - [ ] better hosting
 - [ ] lifeline preload
+
+## technical
+### moving data from text files
+```
+rake data:txt2csv  # from text to csv
+rake data:csv2db   # inserts csv data into db
+```
