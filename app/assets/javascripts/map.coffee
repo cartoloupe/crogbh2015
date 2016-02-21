@@ -58,6 +58,20 @@ addMarker = (lat,long) ->
     map: window.map
     title: 'Hello World!')
 
+addAddress = (address) ->
+  geocoder = new (google.maps.Geocoder)
+  geocoder.geocode { 'address': address }, (results, status) ->
+    window.res = results
+    window.sta = status
+    lat = results[0].geometry.location.lat()
+    lng = results[0].geometry.location.lng()
+    if status == google.maps.GeocoderStatus.OK
+      return
+    else
+      return
+
+
+window['addAddress'] = addAddress
 window['addMarker'] = addMarker
 window['codeAddress'] = codeAddress
 window['getLocation'] = getLocation
