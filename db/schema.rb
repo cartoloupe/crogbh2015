@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108021727) do
+ActiveRecord::Schema.define(version: 20151126171202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "street",     limit: 50
+    t.string   "unit",       limit: 5
+    t.string   "unit_label", limit: 5
+    t.string   "city",       limit: 30
+    t.string   "zip",        limit: 10
+    t.string   "state",      limit: 2
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +37,18 @@ ActiveRecord::Schema.define(version: 20151108021727) do
     t.integer "category_id"
     t.integer "service_id"
   end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer  "service_id"
+    t.string   "name"
+    t.text     "hours"
+    t.integer  "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "locations", ["address_id"], name: "index_locations_on_address_id", using: :btree
+  add_index "locations", ["service_id"], name: "index_locations_on_service_id", using: :btree
 
   create_table "services", force: :cascade do |t|
     t.string   "name"
@@ -53,4 +76,5 @@ ActiveRecord::Schema.define(version: 20151108021727) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "locations", "services"
 end
