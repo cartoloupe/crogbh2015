@@ -39,6 +39,15 @@ community resources online give back hack 2015
 
 ## technical
 ### moving data from text files
+#### the pipeline:
+Word documents --> text files --> csv
+
+- for `word documents` --> `text files`; we manually shape the data
+- for `text files` --> `csv`; there is a rake task: `rake data:txt2csv`
+
+sample text file: `data/services/legal.txt`
+sample csv file: `data/services/legal.csv`
+
 ```
 rake data:txt2csv  # from text to csv
 rake data:csv2db   # inserts csv data into db
