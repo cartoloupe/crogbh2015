@@ -1,11 +1,29 @@
 - content_for :title, @category.name
-.col-md-12
+.container.service-listing
   - @services.each do |service|
-    .row
-      .col-md-4
-        %p= service.name
-      .col-md-4
-        %p= service.description
-      .col-md-4
-        %p= service.website
+    .row.service
+      .col-md-12
+        %header
+          .title= service.name
+        .content.color-inverted
+          .description= raw service.description
+          - if service.website.present?
+            %a.website
+              %span.glyphicon.glyphicon-share-alt
+              = service.website
+          //- service.phone.each do |phone|
+          %p
+            %span.glyphicon.glyphicon-earphone
+            = service.phone
+          //- if service.email.present?
+          //  %p= service.email
+          //- service[:mailing_address].each do |mailing_address|
+          //  %div= raw newline_to_br mailing_address
+          //- service.location.each do |physical_address|
+          %span.glyphicon.glyphicon-map-marker
+          //%div= raw newline_to_br service.location
+          %div= service.location
+          //= display_map service.location
+
+
 
