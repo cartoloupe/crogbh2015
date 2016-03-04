@@ -49,7 +49,7 @@ namespace :data do
               Category.create!(name: datum[:category])
             end
         else
-          model_fields = [:name, :description, :phone, :website]
+          model_fields = [:name, :description, :phone, :website, :location]
           service = Service.create!(datum.slice(*model_fields))
           other_fields = datum.keys - model_fields
           service.update_attributes!(
